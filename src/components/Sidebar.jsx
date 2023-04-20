@@ -1,5 +1,6 @@
-import { Avatar, Box, Divider, Typography } from "@mui/material";
+import { Avatar, Box, Divider, Hidden, Typography } from "@mui/material";
 import VerticalTabs from "./Sidebar_verticalstab";
+import { FaReact } from "react-icons/fa";
 
 
 
@@ -11,12 +12,13 @@ const Sidebar = () => {
             textAlign: "center",
             pt: 2
         }}>
-
-            <Avatar
-                className=""
-                sx={{ height: 200, width: 200, position: "relative", margin: "auto" }}
-                src={require("../assets/ramin.jpg")}
-            ></Avatar>
+            <Hidden mdDown>
+                <Avatar
+                    className=""
+                    sx={{ height: 200, width: 200, position: "relative", margin: "auto" }}
+                    src={require("../assets/ramin.jpg")}
+                ></Avatar>
+            </Hidden>
 
             <Typography variant="h6" color="whitesmoke" className="" >
                 رامین زودفکر
@@ -25,9 +27,16 @@ const Sidebar = () => {
                 توسعه دهنده فرانت اند
             </Typography>
 
-            <Divider variant="middle" className="bg-danger border  my-2" style={{}} />
+            <Divider variant="middle" className="my-2" color={"whitesmoke"} />
 
             <VerticalTabs></VerticalTabs>
+
+            <Divider variant="middle" className="my-2" color={"whitesmoke"} />
+
+            <Typography variant="h6" color="whitesmoke" className="">
+                <FaReact className="react_icon" style={{ color: "skyblue" }}></FaReact>
+                designed by <span style={{ color: "skyblue" }}><b>react</b></span>
+            </Typography>
 
         </Box>
     )

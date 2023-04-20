@@ -4,88 +4,35 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { SiHomeadvisor } from "react-icons/si";
+import { TbMessages } from "react-icons/tb";
+import { FaChalkboardTeacher } from "react-icons/fa";
+import { BsFillPersonBadgeFill, BsPersonWorkspace } from "react-icons/bs";
+
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+
+  const iconstyle = { fontSize: "25px" };
+  const tabclass = ' d-flex justify-content-start px-5';
 
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
+    <Box sx={{}}  >
+      <Tabs sx={{ background: "dark" }} orientation="vertical" variant="scrollable" className=''>
 
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
+        <Tab className={tabclass} label="صفحه اصلی" icon={<SiHomeadvisor style={iconstyle}></SiHomeadvisor>} iconPosition='start' />
 
-function a11yProps(index) {
-  return {
-    id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
-  };
-}
+        <Tab className={tabclass} label="درباره من" icon={<BsFillPersonBadgeFill style={iconstyle}></BsFillPersonBadgeFill>} iconPosition='start' />
 
-export default function VerticalTabs() {
-  const [value, setValue] = React.useState(0);
+        <Tab className={tabclass} label=" نمونه کارها" icon={<BsPersonWorkspace style={iconstyle}></BsPersonWorkspace>} iconPosition='start' />
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+        <Tab className={tabclass} label=" تماس بامن" icon={<TbMessages style={iconstyle}></TbMessages>} iconPosition='start' />
 
-  return (
-    <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}
-    >
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider' }}
-      >
-        <Tab label="Item One" {...a11yProps(0)} />
-        <Tab label="Item Two" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
-        <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} />
+        <Tab className={tabclass} label="  اساتید من" icon={<FaChalkboardTeacher style={iconstyle}></FaChalkboardTeacher>} iconPosition='start' />
       </Tabs>
-      <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
-      </TabPanel>
     </Box>
   );
 }
+
+export default TabPanel;
+
+
