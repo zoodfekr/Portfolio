@@ -9,6 +9,7 @@ import { grey } from "@mui/material/colors";
 import Grid from "@mui/material/Unstable_Grid2";
 import Sidebar from "./Sidebar";
 import { theme } from "./ui/theme";
+import { useState } from "react";
 
 //NOTE Create RTL Cache
 const cacheRTL = createCache({
@@ -17,6 +18,14 @@ const cacheRTL = createCache({
 });
 
 const MainLayout = ({ children }) => {
+
+    const [value, setValue] = useState(0);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+
     return (
         <CacheProvider value={cacheRTL}>
             <ThemeProvider theme={theme}>
@@ -26,15 +35,16 @@ const MainLayout = ({ children }) => {
                     </Helmet>
                     {/* Grid System */}
                     <Grid container sx={{ height: "100vh" }} >
+
                         <Grid
                             xs={0}
                             sm={0}
                             md={3}
                             lg={2}
                             xl={2}
-                            sx={{ }}
+                            sx={{}}
                         >
-                            <Sidebar></Sidebar>
+                            <Sidebar value={value}  handleChange={handleChange}></Sidebar>
                         </Grid>
 
                         <Grid
@@ -52,6 +62,7 @@ const MainLayout = ({ children }) => {
                                 محتوای اصلی
                             </Typography>
                         </Grid>
+
                     </Grid>
 
                     {children}

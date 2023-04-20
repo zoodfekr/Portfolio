@@ -12,6 +12,10 @@ export const theme = createTheme({
     secondary: {
       main: "#bd93f9",
     },
+    danger: {
+      main: "#C70039",
+    },
+
   },
   typography: {
     fontFamily: "vazir, roboto",

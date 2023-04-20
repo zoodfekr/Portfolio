@@ -26,3 +26,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.muirtl-o6me2l-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #ff0000 !important;
+}
