@@ -10,33 +10,34 @@ import { FaChalkboardTeacher } from "react-icons/fa";
 import { BsFillPersonBadgeFill, BsPersonWorkspace } from "react-icons/bs";
 
 
-function TabPanel({value,handleChange}) {
+function Sidebar_verticalstab({  value, handleChange }) {
 
   const iconstyle = { fontSize: "25px" };
   const tabclass = ' d-flex justify-content-start px-5';
 
-  function tabprop(index) {
+  const tabProps = (index) => {
     return {
-      id: `vertical-tab-${index}`,
-      'aria-controls': `vertical-tabpanel-${index}`,
+      id: `sidebar-tab-${index}`,
+      "aria-controls": `tabpanel-${index}`,
     };
-  }
+  };
 
   return (
     <Box sx={{}}  >
-      <Tabs 
-      sx={{ background: "dark" }} 
-      orientation="vertical" 
-      variant="scrollable" 
-      value={value}
-      onChange={handleChange}
-      TabIndicatorProps={{
-        style: {
-          backgroundColor: "red",
-          border:"5px solid red"
-        }
-      }}
-    
+      <Tabs
+        sx={{ background: "dark" }}
+        orientation="vertical"
+        variant="scrollable"
+        value={value}
+        onChange={handleChange}
+        TabIndicatorProps={{
+          style: {
+            backgroundColor: "red",
+            border: "5px solid red",
+            borderRadius: "40px"
+          }
+        }}
+
       >
 
         <Tab
@@ -44,7 +45,7 @@ function TabPanel({value,handleChange}) {
           label="صفحه اصلی"
           icon={<SiHomeadvisor style={iconstyle}></SiHomeadvisor>}
           iconPosition='start'
-          {...tabprop(0)}
+          {...tabProps(0)}
         />
 
         <Tab
@@ -52,34 +53,34 @@ function TabPanel({value,handleChange}) {
           label="درباره من"
           icon={<BsFillPersonBadgeFill style={iconstyle}></BsFillPersonBadgeFill>}
           iconPosition='start'
-          {...tabprop(1)}
-           />
+          {...tabProps(1)}
+        />
 
         <Tab
           className={tabclass}
           label=" نمونه کارها"
           icon={<BsPersonWorkspace style={iconstyle}></BsPersonWorkspace>}
           iconPosition='start'
-          {...tabprop(2)}/>
+          {...tabProps(2)} />
 
         <Tab
           className={tabclass}
           label=" ارتباط بامن"
           icon={<TbMessages style={iconstyle}></TbMessages>}
-          iconPosition='start' 
-          {...tabprop(3)}/>
+          iconPosition='start'
+          {...tabProps(3)} />
 
         <Tab
           className={tabclass}
           label="  اساتید من"
           icon={<FaChalkboardTeacher style={iconstyle}></FaChalkboardTeacher>}
-          iconPosition='start' 
-          {...tabprop(4)}/>
+          iconPosition='start'
+          {...tabProps(4)} />
       </Tabs>
     </Box>
   );
 }
 
-export default TabPanel;
+export default Sidebar_verticalstab;
 
 

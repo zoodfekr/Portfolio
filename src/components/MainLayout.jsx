@@ -10,6 +10,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Sidebar from "./Sidebar";
 import { theme } from "./ui/theme";
 import { useState } from "react";
+import Contents from './Contents';
 
 //NOTE Create RTL Cache
 const cacheRTL = createCache({
@@ -17,7 +18,7 @@ const cacheRTL = createCache({
     stylisPlugins: [prefixer, rtlPlugin],
 });
 
-const MainLayout = ({ children }) => {
+const MainLayout = () => {
 
     const [value, setValue] = useState(0);
 
@@ -44,7 +45,7 @@ const MainLayout = ({ children }) => {
                             xl={2}
                             sx={{}}
                         >
-                            <Sidebar value={value}  handleChange={handleChange}></Sidebar>
+                            <Sidebar value={value} handleChange={handleChange}></Sidebar>
                         </Grid>
 
                         <Grid
@@ -55,17 +56,13 @@ const MainLayout = ({ children }) => {
                             xl={10}
                             sx={{ backgroundColor: "secondary.main" }}
                         >
-                            <Typography
-                                variant="h5"
-                                sx={{ textAlign: "center" }}
-                            >
-                                محتوای اصلی
-                            </Typography>
+             
+                            <Contents value={value} sx={{ height: 250, border: "2px solid red" }}> </Contents>
+
                         </Grid>
 
                     </Grid>
 
-                    {children}
                 </HelmetProvider>
             </ThemeProvider>
         </CacheProvider>
