@@ -1,46 +1,64 @@
-import { Avatar, Box, Divider, Hidden, Typography } from "@mui/material";
+import { Avatar, Box, Divider, Drawer, Fab, Hidden, Typography } from "@mui/material";
 import VerticalTabs from "./Sidebar_verticalstab";
 import { FaReact } from "react-icons/fa";
+import Grid from "@mui/material/Unstable_Grid2";
+import SidebarContent from "./SIdebarContent";
+import { AiOutlineMenu } from "react-icons/ai";
+import { red } from '@mui/material/colors';
+import { useState } from "react";
 
 
+const Sidebar = ({ value, handleChange }) => {
 
+    const [drawershow, setdrawershow] =useState(false);
 
-const Sidebar = ({value,handleChange}) => {
+    const handleDrawerToggle = () => {
+        setdrawershow(!drawershow)
+    };
 
     return (
-        <Box className="bg-dark h-100 " sx={{
-            justifyContent: "center",
-            textAlign: "center",
-            pt: 2
-        }}>
-            <Hidden mdDown>
-                <Avatar
-                    className=""
-                    sx={{ height: 200, width: 200, position: "relative", margin: "auto" }}
-                    src={require("../assets/ramin.jpg")}
-                ></Avatar>
-            </Hidden>
+        <Grid
+            xs={0}
+            sm={0}
+            md={3}
+            lg={2}
+            xl={2}
+        >
 
-            <Typography variant="h6" color="whitesmoke" className="" >
-                رامین زودفکر
-            </Typography>
-            <Typography variant="caption" color="whitesmoke" className="">
-                توسعه دهنده فرانت اند
-            </Typography>
+            <Box sx={{
+                display:{
+                    xs:"block",
+                    sm:"block",
+                    md:"none",
+                    lg:"none",
+                    xl:"none"
+                }
+            }}>
+                <Fab color="secondary" aria-label="menu" size="medium" onClick={handleDrawerToggle}
+                    sx={{
+                        m: 2,
+                        backgroundColor: red[700],
+                    }}>
+                    <AiOutlineMenu />
+                </Fab>
+            </Box>
 
-            <Divider variant="middle" className="my-2" color={"whitesmoke"} />
+            <SidebarContent value={value} handleChange={handleChange}></SidebarContent>
 
-            <VerticalTabs value={value} handleChange={handleChange}></VerticalTabs>
+            <Drawer
+                variant="temporary"
+                open={drawershow}
+                sx={{
+                    '& .MuiDrawer-paper': {
+                        width: 300
+                    },
+                }}
+                onClose={()=>setdrawershow(false)}
+            >
+                <SidebarContent value={value} handleChange={handleChange}></SidebarContent>
+            </Drawer>
 
-
-            <Divider variant="middle" className="my-2" color={"whitesmoke"} />
-
-            <Typography variant="h6" color="whitesmoke" className="">
-                <FaReact className="react_icon mx-1" style={{ color: "skyblue" }}></FaReact>
-                designed by react
-            </Typography>
-
-        </Box>
+        </Grid>
     )
 }
 
