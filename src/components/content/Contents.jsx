@@ -4,7 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import TabPanel from './TabPanel';
+import TabPanel from '../../container/TabPanel';
 import Grid from "@mui/material/Unstable_Grid2";
 
 function Contents({ value }) {

@@ -7,10 +7,10 @@ import { prefixer } from "stylis";
 import { Typography, Box, Divider, Avatar, Drawer } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import Grid from "@mui/material/Unstable_Grid2";
-import Sidebar from "./Sidebar";
-import { theme } from "./ui/theme";
+import Sidebar from "../components/sidebar/Sidebar";
+import { theme } from "../container/theme";
 import { useState } from "react";
-import Contents from './Contents';
+import Contents from '../components/content/Contents';
 
 //NOTE Create RTL Cache
 const cacheRTL = createCache({

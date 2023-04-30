@@ -8,9 +8,9 @@ import { SiHomeadvisor } from "react-icons/si";
 import { TbMessages } from "react-icons/tb";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { BsFillPersonBadgeFill, BsPersonWorkspace } from "react-icons/bs";
+import { grey } from "@mui/material/colors";
 
-
-function Sidebar_verticalstab({  value, handleChange }) {
+function Sidebar_verticalstab({ value, handleChange,setdrawershow }) {
 
   const iconstyle = { fontSize: "25px" };
   const tabclass = ' d-flex justify-content-start px-5';
@@ -25,7 +25,10 @@ function Sidebar_verticalstab({  value, handleChange }) {
   return (
     <Box sx={{}}  >
       <Tabs
-        sx={{ background: "dark" }}
+      onClick={()=>setdrawershow(false)}
+        sx={{
+          background: "dark",
+        }}
         orientation="vertical"
         variant="scrollable"
         value={value}
@@ -37,10 +40,22 @@ function Sidebar_verticalstab({  value, handleChange }) {
             borderRadius: "40px"
           }
         }}
-
       >
 
         <Tab
+        onClick={()=>setdrawershow(false)}
+          sx={{
+            "&.MuiTab-root": {
+              backgroundColor: grey[800],
+              borderRadius: 2,
+              my: 0.25,
+              mx: 1,
+              minHeight: 0,
+            },
+            "&.Mui-selected": {
+              color: "red",
+            }
+          }}
           className={tabclass}
           label="صفحه اصلی"
           icon={<SiHomeadvisor style={iconstyle}></SiHomeadvisor>}
@@ -49,6 +64,19 @@ function Sidebar_verticalstab({  value, handleChange }) {
         />
 
         <Tab
+        onClick={()=>setdrawershow(false)}
+          sx={{
+            "&.MuiTab-root": {
+              backgroundColor: grey[800],
+              borderRadius: 2,
+              my: 0.25,
+              mx: 1,
+              minHeight: 0,
+            },
+            "&.Mui-selected": {
+              color: "red",
+            }
+          }}
           className={tabclass}
           label="درباره من"
           icon={<BsFillPersonBadgeFill style={iconstyle}></BsFillPersonBadgeFill>}
@@ -57,6 +85,19 @@ function Sidebar_verticalstab({  value, handleChange }) {
         />
 
         <Tab
+        onClick={()=>setdrawershow(false)}
+          sx={{
+            "&.MuiTab-root": {
+              backgroundColor: grey[800],
+              borderRadius: 2,
+              my: 0.25,
+              mx: 1,
+              minHeight: 0,
+            },
+            "&.Mui-selected": {
+              color: "red",
+            }
+          }}
           className={tabclass}
           label=" نمونه کارها"
           icon={<BsPersonWorkspace style={iconstyle}></BsPersonWorkspace>}
@@ -64,6 +105,19 @@ function Sidebar_verticalstab({  value, handleChange }) {
           {...tabProps(2)} />
 
         <Tab
+        onClick={()=>setdrawershow(false)}
+          sx={{
+            "&.MuiTab-root": {
+              backgroundColor: grey[800],
+              borderRadius: 2,
+              my: 0.25,
+              mx: 1,
+              minHeight: 0,
+            },
+            "&.Mui-selected": {
+              color: "red",
+            }
+          }}
           className={tabclass}
           label=" ارتباط بامن"
           icon={<TbMessages style={iconstyle}></TbMessages>}
@@ -71,13 +125,26 @@ function Sidebar_verticalstab({  value, handleChange }) {
           {...tabProps(3)} />
 
         <Tab
+        onClick={()=>setdrawershow(false)}
+          sx={{
+            "&.MuiTab-root": {
+              backgroundColor: grey[800],
+              borderRadius: 2,
+              my: 0.25,
+              mx: 1, 
+              minHeight: 0,
+            },
+            "&.Mui-selected": {
+              color: "red",
+            }
+          }}
           className={tabclass}
           label="  اساتید من"
           icon={<FaChalkboardTeacher style={iconstyle}></FaChalkboardTeacher>}
           iconPosition='start'
           {...tabProps(4)} />
       </Tabs>
-    </Box>
+    </Box >
   );
 }
 
