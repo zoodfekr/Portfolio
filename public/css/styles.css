@@ -34,3 +34,46 @@ body {
 /* .MuiButtonBase-root{
   margin: 1px 2px !important;
 } */
+
+
+#one {
+  height: 100px;
+}
+
+#two {
+  height: 200px;
+}
+
+.corner {
+  width: 100px;
+  background-color: green;
+  margin: 10px;
+  position: relative;
+}
+
+.corner:after,
+.corner:before {
+  content: "";
+  position: absolute;
+  left: 100%;
+  width: 40px;
+  height: 50%;
+}
+
+.corner:before {
+  top: 0px;
+  background: linear-gradient(to top right, green 50%, transparent 51%);
+}
+
+.corner:after {
+  bottom: 0px;
+  background: linear-gradient(to bottom right, green 50%, transparent 51%);
+}
+
+.glass{
+  background-color: inherit !important;
+  border: none;
+  color: #e9e2e2;
+  text-align: center;
+  text-shadow: 0px 0px 15px rgb(35, 22, 216);
+}

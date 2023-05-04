@@ -5,7 +5,7 @@ const SidebarFooter = () => {
 
         <Typography variant="h6" color="whitesmoke" className="">
             <FaReact className="react_icon mx-1" style={{ color: "skyblue" }}></FaReact>
-            designed by react
+            developed by react
         </Typography>
     )
 };

@@ -1,18 +1,18 @@
-import { Avatar, Box, Divider, Drawer, Hidden, Typography } from "@mui/material";
-import VerticalTabs from "./Sidebar_verticalstab";
-import Grid from "@mui/material/Unstable_Grid2";
+import { Box, Divider } from "@mui/material";
+import Sidebartabs from "./Sidebartabs";
 import SidebarHeader from "./SidebarHeader";
 import SidebarFooter from "./SIdebarFooter";
-
-
-const SIdebarContainer = ({ value, handleChange, setdrawershow }) => {
+const SidebarContent = () => {
     return (
-
-        <Box className="bg-dark h-100 " sx={{
+        <Box className="bg-dark" sx={{
             justifyContent: "center",
             textAlign: "center",
-            pt: 2
+            pt: 2,
+            height: "100vh",
+            overflowX: "hidden",
+            overflowY: "auto",
         }}>
+
 
             {/* SidebarHeader */}
             <SidebarHeader></SidebarHeader>
@@ -20,7 +20,7 @@ const SIdebarContainer = ({ value, handleChange, setdrawershow }) => {
             <Divider variant="middle" className="my-2" color={"whitesmoke"} />
 
             {/* Sidebartabs */}
-            <VerticalTabs value={value} handleChange={handleChange} setdrawershow={setdrawershow}></VerticalTabs>
+            <Sidebartabs ></Sidebartabs>
 
             <Divider variant="middle" className="my-2" color={"whitesmoke"} />
 
@@ -32,4 +32,4 @@ const SIdebarContainer = ({ value, handleChange, setdrawershow }) => {
     )
 }
 
-export default SIdebarContainer;
+export default SidebarContent;
