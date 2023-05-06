@@ -9,6 +9,7 @@ import SwipeableViews from 'react-swipeable-views';
 import { grey } from '@mui/material/colors';
 import Typed from 'react-typed';
 import Homepage from '../components/content/Homepage';
+import Aboutpage from '../components/content/Aboutpage';
 
 function Contents() {
 
@@ -35,23 +36,11 @@ function Contents() {
             <Homepage></Homepage>
           </TabPanel>
 
-
           <TabPanel value={pagenumber} index={1}>
-            <Box sx={{
-              backgroundImage: `url(${require("../assets/aboute_bg.jpg")})`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              height: "100vh",
-              width: "100%"
-
-            }}>
-              <Typography color="whitesmoke" variant='h3' sx={{ textAlign: "center" }}>
-                درباره من
-              </Typography>
-            </Box>
-
+           <Aboutpage></Aboutpage>
           </TabPanel>
+
+
           <TabPanel value={pagenumber} index={2}>
             <Typography sx={{ textAlign: "center" }}>
               نمونه کارها

@@ -18,7 +18,7 @@ export const Links = {
         }
     },
     particles: {
-        color: { value: "#66A3FF" },
+        color: { value: "#ABFAFE" },
         line_linked: {
             color: "#ffffff",
             distance: 150,

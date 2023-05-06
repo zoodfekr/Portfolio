@@ -4,7 +4,7 @@ import homebg from '../../assets/home_bg.jpg'
 import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
-import {Links} from '../constants/link';
+import { Links } from '../constants/link';
 
 const Homepage = () => {
 
@@ -37,20 +37,20 @@ const Homepage = () => {
 
 
         }}>
-             <Particles id="tsparticles"  init={particlesInit} loaded={particlesLoaded} options={Links}/>
-            <Typography variant='h1' >
+            <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={Links} />
+            <Typography  variant="h2">
                 <Typed
                     strings={['رامین زودفکر', 'Ramin zoodfekr']}
                     typeSpeed={100}
                     backSpeed={50}
                     startDelay={1000}
-                    // attr="placeholder"
-                    // loop
+                // attr="placeholder"
+                // loop
                 >
                     <input type="text" className='glass' />
                 </Typed>
             </Typography>
-            <Typography variant='h4' sx={{ textDecoration: "underline " }}>
+            <Typography variant='h4'>
                 <Typed
                     strings={['توسعه دهنده فرانت اند', 'Front-End Developer']}
                     typeSpeed={100}
