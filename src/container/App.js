@@ -38,10 +38,6 @@ function App() {
                 <ThemeProvider theme={theme}>
                     <HelmetProvider>
 
-                        <Helmet>
-                            <title> ramin zoodfekr </title>
-                        </Helmet>
-
                         {/* Grid System */}
                         <Grid container sx={{ height: "100vh" }} >
                             <Sidebar></Sidebar>

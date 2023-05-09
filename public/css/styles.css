@@ -82,3 +82,19 @@ body {
   -webkit-clip-path: polygon(25% 2%, 100% 2%, 100% 99%, 25% 99%, 0% 50%);
   clip-path: polygon(25% 2%, 100% 2%, 100% 99%, 25% 99%, 0% 50%);
 }
+
+.Social_media {
+  display: flex;
+  width: 100%;
+  padding:0 25px;
+  font-size: larger;
+  align-items: end;
+  justify-content: start;
+  text-decoration: none;
+  color: gray;
+  border-radius: 0px !important;
+  /* border: 1px solid red; */
+}
+.Social_media:hover{
+  color:rgba(255, 0, 0, 0.623)
+}

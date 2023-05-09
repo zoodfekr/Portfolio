@@ -7,6 +7,11 @@ import Devinfo from './components/Devinfo';
 import CustomDivider from "./components/CustomDivider";
 import Skills from "./components/Skills";
 import { BsCodeSlash } from "react-icons/bs";
+import { Helmet } from "react-helmet-async";
+
+import CountUp from 'react-countup';
+
+
 const Aboutpage = () => {
     return (
         <Box sx={{
@@ -16,33 +21,73 @@ const Aboutpage = () => {
             backgroundSize: "cover",
             height: "100vh",
             width: "100%",
-            overflowX:"hidden",
-            overflowY:"auto"
+            overflowX: "hidden",
+            overflowY: "auto"
         }}>
 
 
-
+            <Helmet>
+                <title>  درباره من </title>
+            </Helmet>
 
             <Grid container >
 
-                <Grid item
+
+
+                <Grid container
                     xs={12}
                     sm={12}
                     md={8}
                     lg={8}
                     xl={8}
-                    sx={{ pt: 7}}
+                    sx={{ pt: 0, display: "flex", flexDirection: "column" }}
                 >
                     {/* left content */}
-                    <CustomDivider color={"green"}> توسعه دهنده فرانت اند </CustomDivider>
 
-                    <Devinfo>نام : رامین</Devinfo>
-                    <Devinfo>نام خانوادگی : زودفکر</Devinfo>
-                    <Devinfo>ایمیل : Zoodfekr.r@gmail.com</Devinfo>
-                    <Devinfo>سن : 27</Devinfo>
-                    <Devinfo>متولد : تهران</Devinfo>
+                    <Box sx={{pl:5}}>
+                        <CustomDivider color={"green"}> توسعه دهنده فرانت اند </CustomDivider>
+                    </Box>
 
-                    {/* <CustomDivider>مهارت های من</CustomDivider> */}
+                    <Box sx={{ display: "flex" }}>
+
+                        <Grid
+                            sx={{
+                        
+                                display: {
+                                    xs: "none", sm: "flex"
+                                },
+                                justifyContent: "center"
+                            }}
+                            xs={0}
+                            sm={4}
+                            md={4}
+                            lg={6}
+                            xl={6}>
+
+                            <Box sx={{ display: "flex", flexDirection: "column",justifyContent:"center" }} className="col-xs-0 col-sm-12 col-lg-12 col-xl-6" >
+                                <Chip label="ramin" sx={{ backgroundColor: "#19376D", mt:2 }}></Chip>
+                                <Chip label="ramin" sx={{ backgroundColor: "#FF6969", mt:2 }}></Chip>
+                                <Chip label="ramin" sx={{ backgroundColor: "#0EA293", mt:2 }}></Chip>
+                                <Chip label="ramin" sx={{ backgroundColor: "#7C96AB", mt:2 }}></Chip>
+                            </Box>
+
+
+                        </Grid>
+
+                        <Grid
+                            xs={12}
+                            sm={8}
+                            md={8}
+                            lg={6}
+                            xl={6}>
+                            <Devinfo>نام : رامین</Devinfo>
+                            <Devinfo>نام خانوادگی : زودفکر</Devinfo>
+                            <Devinfo>ایمیل : Zoodfekr.r@gmail.com</Devinfo>
+                            <Devinfo>سن : <CountUp end={27} start={0} duration={5} /></Devinfo>
+                            <Devinfo>متولد : تهران</Devinfo>
+                        </Grid>
+
+                    </Box>
 
                 </Grid>
 
@@ -73,7 +118,6 @@ const Aboutpage = () => {
 
                 </Grid>
             </Grid>
-
 
             <Grid container>
 

@@ -1,8 +1,13 @@
 import { Avatar, Typography } from "@mui/material";
-
+import { RandomReveal } from "react-random-reveal";
+import { persian } from '../constants/persian';
+import { useState } from "react";
 const SidebarHeader = () => {
+    const [start, setStart] = useState(false);
     return (
         <>
+
+
             <Avatar
                 src={require("../../assets/ramin.jpg")}
                 sx={{
@@ -14,6 +19,15 @@ const SidebarHeader = () => {
 
             <Typography variant="h6" color="whitesmoke" className="" >
                 رامین زودفکر
+                {/* <RandomReveal
+                    isPlaying
+                    duration={10}
+                    revealDuration={1.6}
+                    characterSet={persian}
+                    characters=" رامین زودفکر"
+                    onComplete={() => setStart(true)}
+                /> */}
+
             </Typography>
             <Typography variant="caption" color="whitesmoke" className="">
                 توسعه دهنده فرانت اند

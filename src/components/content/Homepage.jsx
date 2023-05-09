@@ -5,6 +5,7 @@ import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { Links } from '../constants/link';
+import { Helmet } from "react-helmet-async";
 
 const Homepage = () => {
 
@@ -37,8 +38,12 @@ const Homepage = () => {
 
 
         }}>
+            <Helmet>
+                <title> صفحه اصلی </title>
+            </Helmet>
+
             <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={Links} />
-            <Typography  variant="h2">
+            <Typography variant="h2">
                 <Typed
                     strings={['رامین زودفکر', 'Ramin zoodfekr']}
                     typeSpeed={100}
