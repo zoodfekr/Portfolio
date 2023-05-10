@@ -8,11 +8,16 @@ import CustomDivider from "./components/CustomDivider";
 import Skills from "./components/Skills";
 import { BsCodeSlash } from "react-icons/bs";
 import { Helmet } from "react-helmet-async";
-
+import { MdOutlinePlayLesson } from "react-icons/md";
+import { FaChalkboardTeacher } from "react-icons/fa";
+import { BiCodeCurly } from "react-icons/bi";
+import Tooltip from '@mui/material/Tooltip';
 import CountUp from 'react-countup';
 
 
+
 const Aboutpage = () => {
+
     return (
         <Box sx={{
             backgroundImage: `url(${aboute_bg})`,
@@ -44,7 +49,7 @@ const Aboutpage = () => {
                 >
                     {/* left content */}
 
-                    <Box sx={{pl:5}}>
+                    <Box sx={{ pl: 5 }}>
                         <CustomDivider color={"green"}> توسعه دهنده فرانت اند </CustomDivider>
                     </Box>
 
@@ -52,7 +57,7 @@ const Aboutpage = () => {
 
                         <Grid
                             sx={{
-                        
+
                                 display: {
                                     xs: "none", sm: "flex"
                                 },
@@ -64,11 +69,35 @@ const Aboutpage = () => {
                             lg={6}
                             xl={6}>
 
-                            <Box sx={{ display: "flex", flexDirection: "column",justifyContent:"center" }} className="col-xs-0 col-sm-12 col-lg-12 col-xl-6" >
-                                <Chip label="ramin" sx={{ backgroundColor: "#19376D", mt:2 }}></Chip>
-                                <Chip label="ramin" sx={{ backgroundColor: "#FF6969", mt:2 }}></Chip>
-                                <Chip label="ramin" sx={{ backgroundColor: "#0EA293", mt:2 }}></Chip>
-                                <Chip label="ramin" sx={{ backgroundColor: "#7C96AB", mt:2 }}></Chip>
+                            <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }} className="col-xs-0 col-sm-12 col-lg-12 col-xl-6" >
+
+                                <Tooltip arrow placement="right" title="دوره های طی شده">
+                                    <Chip sx={{ backgroundColor: "#FF1919", mt: 2 }} label={
+                                        <Typography sx={{ fontSize: "25px" }}>
+                                            <MdOutlinePlayLesson></MdOutlinePlayLesson>
+                                            <CountUp end={9} start={0} duration={5} className="mx-4" />
+                                        </Typography>} >
+                                    </Chip>
+                                </Tooltip>
+
+                                <Tooltip arrow placement="right" title="تعداد استادهای من">
+                                    <Chip sx={{ backgroundColor: "#FF6969", mt: 2 }} label={
+                                        <Typography sx={{ fontSize: "25px" }}>
+                                            <FaChalkboardTeacher></FaChalkboardTeacher>
+                                            <CountUp end={7} start={0} duration={5} className="mx-4" />
+                                        </Typography>} >
+                                    </Chip>
+                                </Tooltip>
+
+                                <Tooltip arrow placement="right" title=" تعداد پروژه های من">
+                                    <Chip sx={{ backgroundColor: "#0EA293", mt: 2 }} label={
+                                        <Typography sx={{ fontSize: "25px" }}>
+                                            <BiCodeCurly></BiCodeCurly>
+                                            <CountUp end={6} start={0} duration={5} className="mx-4" />
+                                        </Typography>} >
+                                    </Chip>
+                                </Tooltip>
+
                             </Box>
 
 
