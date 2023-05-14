@@ -13,14 +13,24 @@ import { FaChalkboardTeacher } from "react-icons/fa";
 import { BiCodeCurly } from "react-icons/bi";
 import Tooltip from '@mui/material/Tooltip';
 import CountUp from 'react-countup';
+import Slide from '@mui/material/Slide';
+import { useEffect, useState } from "react";
 
 
 
 const Aboutpage = () => {
+    const [checked, setChecked] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => setChecked(true), 250)
+        return () => setChecked(false);
+    }, []);
+
 
     return (
         <Box sx={{
-            backgroundImage: `url(${aboute_bg})`,
+            // backgroundImage: `url(${aboute_bg})`,
+            backgroundColor: "#B4B4B4",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
@@ -49,9 +59,12 @@ const Aboutpage = () => {
                 >
                     {/* left content */}
 
-                    <Box sx={{ pl: 5 }}>
-                        <CustomDivider color={"green"}> توسعه دهنده فرانت اند </CustomDivider>
-                    </Box>
+
+                    <Slide direction="down" in={checked}>
+                        <Box sx={{ pl: 5 }}>
+                            <CustomDivider color={"green"}> توسعه دهنده فرانت اند </CustomDivider>
+                        </Box>
+                    </Slide>
 
                     <Box sx={{ display: "flex" }}>
 
@@ -158,9 +171,18 @@ const Aboutpage = () => {
                     xl={12}>
 
 
-                    <CustomDivider color={"purple"} icon={<BsCodeSlash />}>مهارت های من</CustomDivider>
+                    <Slide direction="down" in={checked}>
+                        <Box sx={{ pl: 5 }}>
+                            <CustomDivider color={"purple"} icon={<BsCodeSlash />}>مهارت های من</CustomDivider>
+                        </Box>
+                    </Slide>
 
-                    <Skills></Skills>
+                    <Slide direction="up" in={checked}>
+                        <Box sx={{ pl: 5 }}>
+                            <Skills></Skills>
+
+                        </Box>
+                    </Slide>
 
                 </Grid>
 

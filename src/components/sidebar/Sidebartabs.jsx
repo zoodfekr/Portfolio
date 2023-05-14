@@ -31,7 +31,7 @@ function Sidebartabs() {
     { label: "درباره من ", icon: < BsFillPersonBadgeFill style={iconstyle} ></BsFillPersonBadgeFill>, ...tabProps(1) },
     { label: "نمونه کارها ", icon: < BsPersonWorkspace style={iconstyle} ></BsPersonWorkspace>, ...tabProps(2) },
     { label: "ارتباط با من ", icon: < TbMessages style={iconstyle} ></TbMessages>, ...tabProps(3) },
-    { label: " اساتید من ", icon: < FaChalkboardTeacher style={iconstyle} ></FaChalkboardTeacher>, ...tabProps(4) }
+    { label: " اساتید من ", icon: < FaChalkboardTeacher style={iconstyle} ></FaChalkboardTeacher>, ...tabProps(4) },
   ]
 
   return (
