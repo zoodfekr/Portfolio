@@ -172,15 +172,14 @@ const Aboutpage = () => {
 
 
                     <Slide direction="down" in={checked}>
-                        <Box sx={{ pl: 5 }}>
-                            <CustomDivider color={"purple"} icon={<BsCodeSlash />}>مهارت های من</CustomDivider>
+                        <Box sx={{ }}>
+                            <CustomDivider color={"purple"} textAlign="center" icon={<BsCodeSlash />}>مهارت های من</CustomDivider>
                         </Box>
                     </Slide>
 
                     <Slide direction="up" in={checked}>
-                        <Box sx={{ pl: 5 }}>
+                        <Box sx={{ }}>
                             <Skills></Skills>
-
                         </Box>
                     </Slide>
 

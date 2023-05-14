@@ -57,7 +57,7 @@ function CircularProgressWithLabel(props) {
                     flexDirection: "column"
                 }}
             >
-                <Typography variant="caption" component="div" color="text.secondary" sx={{fontSize:"larger"}}>
+                <Typography variant="caption" component="div" color="text.secondary" sx={{ fontSize: "larger" }}>
                     {`${Math.round(props.value)}%`}
                 </Typography>
                 {props.data ? <Box component="img" src={props.data} sx={{ height: 50 }}></Box> : null}
@@ -147,7 +147,18 @@ const Skills = () => {
 
 
     return (
-        <Box sx={{ width: '90%', m: "auto", border: "5px solid purple", mt: 1, py: 1, borderRadius: "50px", mb: 2, backgroundColor: "rgba(94, 94, 94, 0.431)", display: "flex", justifyContent: "space-around", flexWrap: "wrap" }} >
+        <Box sx={{
+            width: '95%',
+            m: "auto",
+            border: "5px solid purple",
+            mt: 1, py: 1,
+            borderRadius: "50px",
+            mb: 2,
+            backgroundColor: "rgba(94, 94, 94, 0.431)",
+            display: "flex",
+            justifyContent: "space-around",
+            flexWrap: "wrap"
+        }} >
 
             {/* <CustomDivider color={"skyblue"} textAlign={"left"} cimg={html}>
                 <Typography sx={{ color: "black" }}>HTML</Typography>

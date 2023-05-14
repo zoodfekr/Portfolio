@@ -6,7 +6,10 @@ import Box from '@mui/material/Box';
 import { SiHomeadvisor } from "react-icons/si";
 import { TbMessages } from "react-icons/tb";
 import { FaChalkboardTeacher } from "react-icons/fa";
-import { BsFillPersonBadgeFill, BsPersonWorkspace } from "react-icons/bs";
+import { BsFillPersonBadgeFill, BsPersonWorkspace,BsPersonBoundingBox } from "react-icons/bs";
+
+
+
 import { grey } from "@mui/material/colors";
 import { useContext } from 'react';
 import Appcontext from '../../context/Context';
@@ -29,9 +32,10 @@ function Sidebartabs() {
   const tabsdata = [
     { label: "صفحه اصلی", icon: < SiHomeadvisor style={iconstyle} ></SiHomeadvisor>, ...tabProps(0) },
     { label: "درباره من ", icon: < BsFillPersonBadgeFill style={iconstyle} ></BsFillPersonBadgeFill>, ...tabProps(1) },
-    { label: "نمونه کارها ", icon: < BsPersonWorkspace style={iconstyle} ></BsPersonWorkspace>, ...tabProps(2) },
-    { label: "ارتباط با من ", icon: < TbMessages style={iconstyle} ></TbMessages>, ...tabProps(3) },
-    { label: " اساتید من ", icon: < FaChalkboardTeacher style={iconstyle} ></FaChalkboardTeacher>, ...tabProps(4) },
+    { label: " رزومه من ", icon: < BsPersonBoundingBox style={iconstyle} ></BsPersonBoundingBox>, ...tabProps(2) },
+    { label: "نمونه کارها ", icon: < BsPersonWorkspace style={iconstyle} ></BsPersonWorkspace>, ...tabProps(3) },
+    { label: "ارتباط با من ", icon: < TbMessages style={iconstyle} ></TbMessages>, ...tabProps(4) },
+    { label: " اساتید من ", icon: < FaChalkboardTeacher style={iconstyle} ></FaChalkboardTeacher>, ...tabProps(5) },
   ]
 
   return (
