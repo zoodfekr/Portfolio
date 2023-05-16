@@ -107,3 +107,7 @@ body {
   background-color: rgb(233, 231, 231);
 }
 
+.card_button{
+  text-decoration: none;
+}
+

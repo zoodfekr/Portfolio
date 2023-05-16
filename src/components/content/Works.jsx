@@ -12,7 +12,7 @@ import words from '../../assets/words.png';
 import contacts from '../../assets/contacts.png';
 import portfolio from '../../assets/portfolio.png';
 
-
+import Grow from '@mui/material/Grow';
 import CustomDivider from "./components/CustomDivider";
 import { BsCodeSlash } from "react-icons/bs";
 import { AiFillEye } from "react-icons/ai";
@@ -49,9 +49,10 @@ const Works = (props) => {
             text: "پروژه پورتفولیو، برنامه تحت وبی که اکنون در حال کارکردن با آن هستید. این پروژه هم با استفاده از react , Mui  ساخته شده. ",
             img: `${portfolio}`,
             color: "#1FB9EA",
-            address: "https://zoodfekr-org.github.io/",
-            code: "https://github.com/zoodfekr/contacts-management",
+            address: "#",
+            code: "https://github.com/zoodfekr/portfolio",
         },
+
 
     ]
 
@@ -93,38 +94,31 @@ const Works = (props) => {
 
 
             <Grid container>
+
+                {/* <Grow in={true}> */}
                 {card_data.map((data, index) => (
                     <Grid key={index} item xs={12} sm={6} md={6} lg={3} xl={3} sx={{ display: "flex", justifyContent: "center", mt: 2, px: 1 }} >
-                        <Card sx={{ maxWidth: 345, border: `${data.color} 5px solid `, borderRadius: "30px" }}>
-                            <CardMedia sx={{ height: 250 }} title="green iguana" image={data.img} />
-                            <CardContent sx={{ background: `${data.color}` }}>
-                                <Typography gutterBottom variant="h5" component="div" dir="rtl" color="black">
-                                    {data.title}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" dir="rtl" sx={{ minHeight: "80px" }}>
-                                    {data.text}
-                                </Typography>
-                            </CardContent>
-                            <CardActions sx={{ background: `${data.color}`, }}>
-
-                                <a className=" "
-                                    href={data.address}
-                                    target="_blank"
-                                    rel="noopener noreferrer">
-                                    <Typography color="black" sx={{ mx: 2, fontSize: "14px" }}>نمایش <AiFillEye></AiFillEye></Typography>
-                                </a>
-
-                                <a className=" "
-                                    href={data.code}
-                                    target="_blank"
-                                    rel="noopener noreferrer">
-                                    <Typography color="black" sx={{ mx: 2, fontSize: "14px" }}>نمایش کد <BsCodeSlash></BsCodeSlash></Typography>
-                                </a>
-
-                            </CardActions>
-                        </Card>
+                        <Slide in={checked} direction="up" style={{ transitionDelay: checked ? `${100 + (index * 250)}ms` : "0ms" }} >
+                            <Card sx={{ maxWidth: 345, border: `${data.color} 5px solid `, borderRadius: "30px" }}>
+                                <CardMedia sx={{ height: 250 }} title="green iguana" image={data.img} />
+                                <CardContent sx={{ background: `${data.color}` }}>
+                                    <Typography gutterBottom variant="h5" component="div" dir="rtl" color="black">{data.title}</Typography>
+                                    <Typography variant="body2" color="black" dir="rtl" sx={{ minHeight: "80px" }} align="justify"> {data.text}</Typography>
+                                </CardContent>
+                                <CardActions sx={{ background: `${data.color}`, }}>
+                                    <a className="card_button " href={data.address} target="_blank" rel="noopener noreferrer">
+                                        <Typography color="black" sx={{ mx: 2, fontSize: "18px" }}>نمایش <AiFillEye></AiFillEye></Typography>
+                                    </a>
+                                    <a className=" card_button" href={data.code} target="_blank" rel="noopener noreferrer">
+                                        <Typography color="black" sx={{ mx: 2, fontSize: "18px" }}>نمایش کد <BsCodeSlash></BsCodeSlash></Typography>
+                                    </a>
+                                </CardActions>
+                            </Card>
+                        </Slide>
                     </Grid>
                 ))}
+                {/* </Grow> */}
+
             </Grid>
 
 
