@@ -16,7 +16,15 @@ import CountUp from 'react-countup';
 import Slide from '@mui/material/Slide';
 import { useEffect, useState } from "react";
 
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 
+import { AiFillAccountBook } from "react-icons/ai";
 
 const Aboutpage = () => {
     const [checked, setChecked] = useState(false);
@@ -27,10 +35,42 @@ const Aboutpage = () => {
     }, []);
 
 
+
+    const timeline_data = [
+        { icon: <AiFillAccountBook ></AiFillAccountBook>, header: "مقطع راهنمایی", text: "مدرسه راهنمایی شهید ارمبو" },
+        { icon: <AiFillAccountBook ></AiFillAccountBook>, header: "دیپلم", text: "دبیرستان نمونه دکتر حسابی - ریاضی فیزیک " },
+        { icon: <AiFillAccountBook ></AiFillAccountBook>, header: "مقطع پیش دانشگاهی ", text: " پیش دانشگاهی امام رضا - ریاضی فیزیک" },
+        { icon: <AiFillAccountBook ></AiFillAccountBook>, header: "کارشناسی", text: "دانشگاه تهران - مخابرات" },
+    ]
+
+    const timeline_func = <Timeline position="right" sx={{ direction: "ltr" }}>
+        {timeline_data.map((item, index) => (
+            <TimelineItem key={index} sx={{ mt: 0 }}>
+                <TimelineSeparator>
+                    <TimelineDot color="danger" variant="outlined">
+                        {item.icon}
+                    </TimelineDot>
+                    {index != 3 ? (<TimelineConnector sx={{ border: "1px solid red", }} />) : null}
+                </TimelineSeparator>
+                <TimelineContent>
+                    <Typography variant="body1" color="black">
+                        {item.header}
+                    </Typography>
+                    <Typography variant="body2" color="black">
+                        {item.text}
+                    </Typography>
+                </TimelineContent>
+            </TimelineItem>
+        ))}
+    </Timeline>;
+
+
     return (
         <Box sx={{
             // backgroundImage: `url(${aboute_bg})`,
-            backgroundColor: "#B4B4B4",
+            // backgroundColor: "#B4B4B4",
+            backgroundColor: "white",
+
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
@@ -47,8 +87,6 @@ const Aboutpage = () => {
 
             <Grid container >
 
-
-
                 <Grid container
                     xs={12}
                     sm={12}
@@ -62,7 +100,7 @@ const Aboutpage = () => {
 
                     <Slide direction="down" in={checked}>
                         <Box sx={{ pl: 5 }}>
-                            <CustomDivider color={"green"}> توسعه دهنده فرانت اند </CustomDivider>
+                            <CustomDivider linecolor={"green"} color={"green"}> توسعه دهنده فرانت اند </CustomDivider>
                         </Box>
                     </Slide>
 
@@ -141,8 +179,7 @@ const Aboutpage = () => {
                     xl={4}
                     sx={{ justifyContent: "center", pt: 10 }}
                 >
-                    {/* roght content */}
-
+                    {/* right content */}
                     <Avatar className="avatartest" variant="rounded" alt="Remy Sharp" src={devinfo} sx={{
                         display: {
                             xl: "block",
@@ -163,27 +200,38 @@ const Aboutpage = () => {
 
             <Grid container>
 
+                {/* skills */}
                 <Grid item
                     xs={12}
                     sm={12}
                     md={12}
                     lg={12}
                     xl={12}>
-
-
                     <Slide direction="down" in={checked}>
-                        <Box sx={{ }}>
-                            <CustomDivider color={"purple"} textAlign="center" icon={<BsCodeSlash />}>مهارت های من</CustomDivider>
+                        <Box sx={{}}>
+                            <CustomDivider linecolor={"purple"} color={"purple"} textAlign="center" icon={<BsCodeSlash />}>مهارت های من</CustomDivider>
                         </Box>
                     </Slide>
-
-                    <Slide direction="up" in={checked}>
-                        <Box sx={{ }}>
-                            <Skills></Skills>
-                        </Box>
-                    </Slide>
+                    <Skills></Skills>
 
                 </Grid>
+
+            </Grid>
+
+            {/* education*/}
+            <Grid container >
+
+                <Grid item xs={12}>
+
+                    <Slide direction="down" in={checked}>
+                        <Box>
+                            <CustomDivider color={"red"} textAlign="center" linecolor={"red"}>تحصیلات</CustomDivider>
+                        </Box>
+                    </Slide>
+
+                    {timeline_func}
+                </Grid>
+
 
             </Grid>
 

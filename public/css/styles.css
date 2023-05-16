@@ -102,5 +102,8 @@ body {
 
 .MuiCircularProgress-root {
   transform: rotate(90deg) !important;
-  border-radius: 25px;
+  border-radius: 95px !important;
+  border: 1px dotted purple !important;
+  background-color: rgb(233, 231, 231);
 }
+

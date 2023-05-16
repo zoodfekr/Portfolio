@@ -16,6 +16,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { SiLetsencrypt } from 'react-icons/si';
 import CircularProgress from '@mui/material/CircularProgress';
+import Tooltip from '@mui/material/Tooltip';
 
 
 // function LinearProgressWithLabel(props) {
@@ -57,10 +58,11 @@ function CircularProgressWithLabel(props) {
                     flexDirection: "column"
                 }}
             >
-                <Typography variant="caption" component="div" color="text.secondary" sx={{ fontSize: "larger" }}>
-                    {`${Math.round(props.value)}%`}
-                </Typography>
-                {props.data ? <Box component="img" src={props.data} sx={{ height: 50 }}></Box> : null}
+                    <Typography variant="caption" component="div" color="black" sx={{ fontSize: "larger" }}>
+                        {`${Math.round(props.value)}%`}
+                    </Typography>
+                    {props.data ? <Box component="img" src={props.data} sx={{ height: 50 }}></Box> : null}
+        
             </Box>
         </Box>
     );
@@ -150,11 +152,11 @@ const Skills = () => {
         <Box sx={{
             width: '95%',
             m: "auto",
-            border: "5px solid purple",
+            // border: "1px solid purple",
             mt: 1, py: 1,
             borderRadius: "50px",
             mb: 2,
-            backgroundColor: "rgba(94, 94, 94, 0.431)",
+            // backgroundColor: "rgba(94, 94, 94, 0.431)",
             display: "flex",
             justifyContent: "space-around",
             flexWrap: "wrap"
@@ -184,7 +186,6 @@ const Skills = () => {
             <Box sx={{}}>
                 <CircularProgressWithLabel value={vcss} bgcolor={"#80aed0"} data={css} />
                 <CircularProgressWithLabel value={vhtml} bgcolor={"#e44d26"} data={html} />
-
             </Box>
 
             <Box sx={{}}>

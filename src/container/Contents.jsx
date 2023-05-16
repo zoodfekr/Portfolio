@@ -10,7 +10,8 @@ import { grey } from '@mui/material/colors';
 import Typed from 'react-typed';
 import Homepage from '../components/content/Homepage';
 import Aboutpage from '../components/content/Aboutpage';
-import Resume from '../components/content/Resume';
+import Works from '../components/content/Works';
+
 
 function Contents() {
 
@@ -41,23 +42,18 @@ function Contents() {
             <Aboutpage></Aboutpage>
           </TabPanel>
 
+
           <TabPanel value={pagenumber} index={2}>
-            <Typography sx={{ textAlign: "center" }}>
-              <Resume></Resume>
-            </Typography>
+            <Works helmet={"نمونه کارها"}></Works>
           </TabPanel>
 
+          
           <TabPanel value={pagenumber} index={3}>
-            <Typography sx={{ textAlign: "center" }}>
-              نمونه کارها
-            </Typography>
-          </TabPanel>
-          <TabPanel value={pagenumber} index={4}>
             <Typography sx={{ textAlign: "center" }}>
               ارتباط با من
             </Typography>
           </TabPanel>
-          <TabPanel value={pagenumber} index={5}>
+          <TabPanel value={pagenumber} index={4}>
             <Typography sx={{ textAlign: "center" }}>
               اساتید من
             </Typography>

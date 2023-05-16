@@ -1,6 +1,5 @@
 import { Avatar, Typography } from "@mui/material";
 import { RandomReveal } from "react-random-reveal";
-import { persian } from '../constants/persian';
 import { useState } from "react";
 const SidebarHeader = () => {
     const [start, setStart] = useState(false);
