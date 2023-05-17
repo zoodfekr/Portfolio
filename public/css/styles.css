@@ -107,7 +107,16 @@ body {
   background-color: rgb(233, 231, 231);
 }
 
-.card_button{
+.card_button {
   text-decoration: none;
 }
+.scale{
+  transition: all .5s;
+}
 
+.scale:hover {
+  scale: 1.1;
+  transition: all .5s;
+  z-index: 100 !important;
+
+}

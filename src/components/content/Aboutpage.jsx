@@ -8,14 +8,10 @@ import CustomDivider from "./components/CustomDivider";
 import Skills from "./components/Skills";
 import { BsCodeSlash } from "react-icons/bs";
 import { Helmet } from "react-helmet-async";
-import { MdOutlinePlayLesson } from "react-icons/md";
-import { FaChalkboardTeacher } from "react-icons/fa";
-import { BiCodeCurly } from "react-icons/bi";
 import Tooltip from '@mui/material/Tooltip';
 import CountUp from 'react-countup';
 import Slide from '@mui/material/Slide';
 import { useEffect, useState } from "react";
-
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -23,25 +19,17 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-
-import { AiFillAccountBook } from "react-icons/ai";
-
+import { aboutpage_tooltip } from '../constants/appdata';
+import { timeline_data } from '../constants/appdata';
 const Aboutpage = () => {
     const [checked, setChecked] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => setChecked(true), 250)
+        setTimeout(() => setChecked(true), 500)
         return () => setChecked(false);
     }, []);
 
 
-
-    const timeline_data = [
-        { icon: <AiFillAccountBook ></AiFillAccountBook>, header: "مقطع راهنمایی", text: "مدرسه راهنمایی شهید ارمبو" },
-        { icon: <AiFillAccountBook ></AiFillAccountBook>, header: "دیپلم", text: "دبیرستان نمونه دکتر حسابی - ریاضی فیزیک " },
-        { icon: <AiFillAccountBook ></AiFillAccountBook>, header: "مقطع پیش دانشگاهی ", text: " پیش دانشگاهی امام رضا - ریاضی فیزیک" },
-        { icon: <AiFillAccountBook ></AiFillAccountBook>, header: "کارشناسی", text: "دانشگاه تهران - مخابرات" },
-    ]
 
     const timeline_func = <Timeline position="right" sx={{ direction: "ltr" }}>
         {timeline_data.map((item, index) => (
@@ -107,13 +95,7 @@ const Aboutpage = () => {
                     <Box sx={{ display: "flex" }}>
 
                         <Grid
-                            sx={{
-
-                                display: {
-                                    xs: "none", sm: "flex"
-                                },
-                                justifyContent: "center"
-                            }}
+                            sx={{ display: { xs: "none", sm: "flex" }, justifyContent: "center" }}
                             xs={0}
                             sm={4}
                             md={4}
@@ -121,34 +103,16 @@ const Aboutpage = () => {
                             xl={6}>
 
                             <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }} className="col-xs-0 col-sm-12 col-lg-12 col-xl-6" >
-
-                                <Tooltip arrow placement="right" title="دوره های طی شده">
-                                    <Chip sx={{ backgroundColor: "#FF1919", mt: 2 }} label={
-                                        <Typography sx={{ fontSize: "25px" }}>
-                                            <MdOutlinePlayLesson></MdOutlinePlayLesson>
-                                            <CountUp end={9} start={0} duration={5} className="mx-4" />
-                                        </Typography>} >
-                                    </Chip>
-                                </Tooltip>
-
-                                <Tooltip arrow placement="right" title="تعداد استادهای من">
-                                    <Chip sx={{ backgroundColor: "#FF6969", mt: 2 }} label={
-                                        <Typography sx={{ fontSize: "25px" }}>
-                                            <FaChalkboardTeacher></FaChalkboardTeacher>
-                                            <CountUp end={7} start={0} duration={5} className="mx-4" />
-                                        </Typography>} >
-                                    </Chip>
-                                </Tooltip>
-
-                                <Tooltip arrow placement="right" title=" تعداد پروژه های من">
-                                    <Chip sx={{ backgroundColor: "#0EA293", mt: 2 }} label={
-                                        <Typography sx={{ fontSize: "25px" }}>
-                                            <BiCodeCurly></BiCodeCurly>
-                                            <CountUp end={6} start={0} duration={5} className="mx-4" />
-                                        </Typography>} >
-                                    </Chip>
-                                </Tooltip>
-
+                                {aboutpage_tooltip.map((data, index) => (
+                                    <Tooltip key={index} arrow placement="right" title={data.title}>
+                                        <Chip sx={{ backgroundColor: `${data.backgroundColor}`, mt: 2 }} label={
+                                            <Typography sx={{ fontSize: "25px" }}>
+                                                {data.icon}
+                                                <CountUp end={data.end} start={0} duration={5} className="mx-4" />
+                                            </Typography>} >
+                                        </Chip>
+                                    </Tooltip>
+                                ))}
                             </Box>
 
 

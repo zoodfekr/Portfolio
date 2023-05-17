@@ -11,6 +11,7 @@ import Typed from 'react-typed';
 import Homepage from '../components/content/Homepage';
 import Aboutpage from '../components/content/Aboutpage';
 import Works from '../components/content/Works';
+import Certificates from '../components/content/Certificates';
 
 
 function Contents() {
@@ -47,14 +48,13 @@ function Contents() {
             <Works helmet={"نمونه کارها"}></Works>
           </TabPanel>
 
-          
+
           <TabPanel value={pagenumber} index={3}>
-            <Typography sx={{ textAlign: "center" }}>
-              ارتباط با من
-            </Typography>
+            <Certificates helmet={"گواهینامه ها"}></Certificates>
           </TabPanel>
+
           <TabPanel value={pagenumber} index={4}>
-            <Typography sx={{ textAlign: "center" }}>
+            <Typography sx={{ textAlign: "center" }} color="red">
               اساتید من
             </Typography>
           </TabPanel>
