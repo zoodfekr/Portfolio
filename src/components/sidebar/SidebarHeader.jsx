@@ -1,10 +1,13 @@
 import { Avatar, Typography } from "@mui/material";
 import { RandomReveal } from "react-random-reveal";
 import { useState } from "react";
+import Themebutton from "../../components/content/components/Themebutton";
 const SidebarHeader = () => {
     const [start, setStart] = useState(false);
     return (
         <>
+
+            <Themebutton></Themebutton>
 
 
             <Avatar
@@ -16,7 +19,7 @@ const SidebarHeader = () => {
             ></Avatar>
 
 
-            <Typography variant="h6" color="whitesmoke" className="" >
+            <Typography variant="h6" color="text.primary"  >
                 رامین زودفکر
                 {/* <RandomReveal
                     isPlaying
@@ -28,7 +31,7 @@ const SidebarHeader = () => {
                 /> */}
 
             </Typography>
-            <Typography variant="caption" color="whitesmoke" className="">
+            <Typography variant="caption" color="text.primary" className="">
                 توسعه دهنده فرانت اند
             </Typography>
         </>

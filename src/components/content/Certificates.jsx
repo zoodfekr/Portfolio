@@ -3,12 +3,9 @@ import { Helmet } from "react-helmet-async"
 import CustomDivider from "./components/CustomDivider";
 import { useEffect, useState } from "react";
 import { TbCertificate } from "react-icons/tb";
-import bootstrap from '../../assets/cert/bootstrap.png';
 import Slider from "react-slick";
 import { slider_image } from "../constants/appdata";
-
-
-
+import bg1 from '../../assets/bg1.jpg';
 
 const Certificates = (props) => {
     const [checked, setChecked] = useState(false);
@@ -27,7 +24,8 @@ const Certificates = (props) => {
             </Helmet>
 
             <Box sx={{
-                backgroundColor: "white",
+                  backgroundImage: `url(${bg1})`,
+                // backgroundColor: "white",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
                 backgroundSize: "cover",

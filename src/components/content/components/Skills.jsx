@@ -19,28 +19,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Tooltip from '@mui/material/Tooltip';
 
 
-// function LinearProgressWithLabel(props) {
-//     return (
-//         <Box sx={{display:"flex" }}>
-
-//             <Box sx={{ width: '100%', mr: 1 }}>
-//                 <LinearProgress variant="determinate" sx={{
-//                     height: 15, borderRadius: "50px",
-//                     "& .muirtl-qd76qg-MuiLinearProgress-bar1": {
-//                         backgroundColor: props.bgcolor
-//                     }
-
-//                 }} {...props} />
-//             </Box>
-
-//             <Box sx={{ minWidth: 35, mx: 2 }}>
-//                     <Typography variant="body2" color="text.secondary">{`${Math.round(
-//                         props.value,
-//                     )}%`}</Typography>
-//                 </Box>
-//         </Box>
-//     );
-// }
 function CircularProgressWithLabel(props) {
     return (
         <Box sx={{ position: 'relative', display: 'inline-flex', m: 2 }}>
@@ -161,27 +139,6 @@ const Skills = () => {
             justifyContent: "space-around",
             flexWrap: "wrap"
         }} >
-
-            {/* <CustomDivider color={"skyblue"} textAlign={"left"} cimg={html}>
-                <Typography sx={{ color: "black" }}>HTML</Typography>
-            </CustomDivider> */}
-
-            {/* <CustomDivider color={"#5a6bed"} textAlign={"left"} cimg={css}>
-                <Typography sx={{ color: "black" }}>CSS</Typography>
-            </CustomDivider> */}
-            {/* 
-            <CustomDivider color={"orange"} textAlign={"left"} cimg={js}>
-                <Typography sx={{ color: "black" }}>JavaScript</Typography>
-            </CustomDivider> */}
-            {/* 
-            <CustomDivider color={"#5f5aed"} textAlign={"left"} cimg={react}>
-                <Typography sx={{ color: "black" }}>React</Typography>
-            </CustomDivider> */}
-            {/* 
-            <CustomDivider color={"#912fed"} textAlign={"left"} cimg={gitimg}>
-                <Typography sx={{ color: "black" }}>Git</Typography>
-            </CustomDivider> */}
-
 
             <Box sx={{}}>
                 <CircularProgressWithLabel value={vcss} bgcolor={"#80aed0"} data={css} />

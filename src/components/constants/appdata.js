@@ -1,19 +1,18 @@
-import restaurant from '../../assets/restaurant.png';
+import restaurant from '../../assets/restaurant.jpg';
 import words from '../../assets/words.png';
-import contacts from '../../assets/contacts.png';
+import contacts from '../../assets/contacts.jpg';
 import portfolio from '../../assets/portfolio.png';
 import { AiFillAccountBook } from "react-icons/ai";
 import { MdOutlinePlayLesson } from "react-icons/md";
 import { FaChalkboardTeacher } from "react-icons/fa";
-import { BiCodeCurly } from "react-icons/bi";
+import { BiCodeCurly, BiBookAlt } from "react-icons/bi";
 
-import html from '../../assets/cert/html.png';
-import flexbox from '../../assets/cert/flexbox.png';
-import es from '../../assets/cert/es.png';
-import bootstrap from '../../assets/cert/bootstrap.png';
-import js from '../../assets/cert/js.png';
-import sass from '../../assets/cert/sass.png';
-
+import html from '../../assets/cert/html.jpg';
+import flexbox from '../../assets/cert/flexbox.jpg';
+import es from '../../assets/cert/es.jpg';
+import js from '../../assets/cert/js.jpg';
+import sass from '../../assets/cert/sass.jpg';
+import bootstrap from '../../assets/cert/bootstrap.jpg';
 
 
 export const card_data = [
@@ -44,7 +43,7 @@ export const card_data = [
         title: "وب اپلیکیشن پورتفولیو",
         text: "پروژه پورتفولیو، برنامه تحت وبی که اکنون در حال کارکردن با آن هستید. این پروژه هم با استفاده از react , Mui  ساخته شده. ",
         img: `${portfolio}`,
-        color: "#1FB9EA",
+        color: "skyblue",
         address: "#",
         code: "https://github.com/zoodfekr/portfolio",
     },
@@ -72,13 +71,13 @@ export const aboutpage_tooltip = [
 ];
 
 export const timeline_data = [
-    { icon: <AiFillAccountBook ></AiFillAccountBook>, header: "مقطع راهنمایی", text: "مدرسه راهنمایی شهید ارمبو" },
-    { icon: <AiFillAccountBook ></AiFillAccountBook>, header: "دیپلم", text: "دبیرستان نمونه دکتر حسابی - ریاضی فیزیک " },
-    { icon: <AiFillAccountBook ></AiFillAccountBook>, header: "مقطع پیش دانشگاهی ", text: " پیش دانشگاهی امام رضا - ریاضی فیزیک" },
-    { icon: <AiFillAccountBook ></AiFillAccountBook>, header: "کارشناسی", text: "دانشگاه تهران - مخابرات" },
+    { icon: <BiBookAlt style={{ color: "white", fontSize: "20px" }}></BiBookAlt>, header: "مقطع راهنمایی", text: "مدرسه راهنمایی شهید ارمبو" },
+    { icon: <BiBookAlt style={{ color: "white", fontSize: "20px" }}></BiBookAlt>, header: "دیپلم", text: "دبیرستان  دکتر حسابی - ریاضی فیزیک " },
+    { icon: <BiBookAlt style={{ color: "white", fontSize: "20px" }}></BiBookAlt>, header: "مقطع پیش دانشگاهی ", text: " پیش دانشگاهی امام رضا (ع)- ریاضی فیزیک" },
+    { icon:<BiBookAlt style={{ color: "white", fontSize: "20px" }}></BiBookAlt>, header: "کارشناسی", text: "دانشگاه تهران - مخابرات" },
 ];
 
 
 export const slider_image = [{ img: html }, { img: flexbox }, { img: sass }, { img: bootstrap }, { img: js }, { img: es }]
-// export const slider_image = [{ img: html },{ img: flexbox }]
+
 

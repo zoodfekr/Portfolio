@@ -10,6 +10,7 @@ import { AiFillEye } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { card_data } from '../constants/appdata';
 import { MdOutlineSettingsApplications } from "react-icons/md";
+import bg2 from '../../assets/bg2.jpg';
 
 const Works = (props) => {
 
@@ -22,7 +23,9 @@ const Works = (props) => {
 
     return (
         <Box sx={{
-            backgroundColor: "white",
+            backgroundImage: `url(${bg2})`,
+
+            // backgroundColor: "white",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",

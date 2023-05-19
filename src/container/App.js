@@ -8,7 +8,7 @@ import { Typography, Box, Divider, Avatar, Drawer } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import Grid from "@mui/material/Unstable_Grid2";
 import Sidebar from "./Sidebar";
-import { theme } from "../container/theme";
+import { darktheme, lighttheme } from "../container/theme";
 import { useState } from "react";
 import Contents from '../container/Contents';
 import Appcontext from "../context/Context";
@@ -23,22 +23,22 @@ function App() {
 
     const [pagenumber, setpagenumber] = useState(0);
     const [drawershow, setdrawershow] = useState(false);
+    const [mode, setmode] = useState();
 
     const handleChange = (event, newValue) => {
         setpagenumber(newValue);
     };
 
+    let theme = (mode ? lighttheme : darktheme);
+
 
     return (
-        <Appcontext.Provider
-            value={{
-                pagenumber, setpagenumber, handleChange, drawershow, setdrawershow,theme
-            }}>
+        <Appcontext.Provider value={{ pagenumber, setpagenumber, handleChange, drawershow, setdrawershow, theme, setmode, mode }}>
+
             <CacheProvider value={cacheRTL}>
                 <ThemeProvider theme={theme}>
                     <HelmetProvider>
 
-                        {/* Grid System */}
                         <Grid container sx={{ height: "100vh" }} >
                             <Sidebar></Sidebar>
                             <Contents> </Contents>
@@ -47,6 +47,7 @@ function App() {
                     </HelmetProvider>
                 </ThemeProvider>
             </CacheProvider>
+
         </Appcontext.Provider>
     );
 }

@@ -1,13 +1,13 @@
 import { createTheme } from "@mui/material/styles";
-import { blue, red } from "@mui/material/colors";
+import { blue, red, grey, lightBlue } from "@mui/material/colors";
 
 //NOTE Create Custom Theme
-export const theme = createTheme({
+export const darktheme = createTheme({
   direction: "rtl",
   palette: {
     mode: "dark",
     primary: {
-      main: "#8be9fd",
+      main: grey[900],
     },
     secondary: {
       main: "#bd93f9",
@@ -15,33 +15,37 @@ export const theme = createTheme({
     danger: {
       main: "#C70039",
     },
+    lightBlue: {
+      main: lightBlue[400]
+    }
 
   },
   typography: {
     fontFamily: "vazir, roboto",
   },
-  components: {
-    MuiButtonBase: {
-      defaultProps: {
-        disableRipple: true,
-      },
+
+});
+
+export const lighttheme = createTheme({
+  direction: "rtl",
+  palette: {
+    mode: "light",
+    primary: {
+      main: grey[400],
     },
-    MuiButton: {
-      variants: [
-        {
-          props: { variant: "dashed" },
-          style: {
-            textTransform: "none",
-            border: `2px dashed ${blue[500]}`,
-          },
-        },
-        {
-          props: { variant: "dashed", color: "secondary" },
-          style: {
-            border: `4px dashed ${red[500]}`,
-          },
-        },
-      ],
+    secondary: {
+      main: "#bd93f9",
     },
+    danger: {
+      main: "#C70039",
+    }, 
+    lightBlue: {
+      main: lightBlue[900]
+    }
+
   },
+  typography: {
+    fontFamily: "vazir, roboto",
+  },
+
 });

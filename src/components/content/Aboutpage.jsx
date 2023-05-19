@@ -1,8 +1,6 @@
 import Grid from "@mui/material/Unstable_Grid2";
 import { Avatar, Box, Chip, Divider, Typography } from "@mui/material";
-import aboute_bg from '../../assets/aboute_bg.jpg';
 import devinfo from '../../assets/devinfo.jpg';
-import { MdArrowBackIosNew } from "react-icons/md";
 import Devinfo from './components/Devinfo';
 import CustomDivider from "./components/CustomDivider";
 import Skills from "./components/Skills";
@@ -17,10 +15,13 @@ import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { aboutpage_tooltip } from '../constants/appdata';
 import { timeline_data } from '../constants/appdata';
+import bg3 from '../../assets/bg3.jpg';
+import { TimelineOppositeContent } from "@mui/lab";
+
+
 const Aboutpage = () => {
     const [checked, setChecked] = useState(false);
 
@@ -34,6 +35,11 @@ const Aboutpage = () => {
     const timeline_func = <Timeline position="right" sx={{ direction: "ltr" }}>
         {timeline_data.map((item, index) => (
             <TimelineItem key={index} sx={{ mt: 0 }}>
+                <TimelineOppositeContent color="text.secondary">
+                    <Typography variant="body1" color="white">
+                        {item.header}
+                    </Typography>
+                </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineDot color="danger" variant="outlined">
                         {item.icon}
@@ -41,10 +47,8 @@ const Aboutpage = () => {
                     {index != 3 ? (<TimelineConnector sx={{ border: "1px solid red", }} />) : null}
                 </TimelineSeparator>
                 <TimelineContent>
-                    <Typography variant="body1" color="black">
-                        {item.header}
-                    </Typography>
-                    <Typography variant="body2" color="black">
+
+                    <Typography variant="body2" color="white">
                         {item.text}
                     </Typography>
                 </TimelineContent>
@@ -55,9 +59,9 @@ const Aboutpage = () => {
 
     return (
         <Box sx={{
-            // backgroundImage: `url(${aboute_bg})`,
+            backgroundImage: `url(${bg3})`,
             // backgroundColor: "#B4B4B4",
-            backgroundColor: "white",
+            // backgroundColor: "white",
 
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",

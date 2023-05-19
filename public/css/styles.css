@@ -103,20 +103,27 @@ body {
 .MuiCircularProgress-root {
   transform: rotate(90deg) !important;
   border-radius: 95px !important;
-  border: 1px dotted purple !important;
+  border: 1px dotted rgb(0, 0, 0) !important;
   background-color: rgb(233, 231, 231);
 }
 
 .card_button {
   text-decoration: none;
 }
-.scale{
+
+.scale {
   transition: all .5s;
 }
 
 .scale:hover {
-  scale: 1.1;
+  scale: 1.05;
   transition: all .5s;
   z-index: 100 !important;
 
+}
+
+.muirtl-1alexuf-MuiButtonBase-root-MuiTab-root,
+.muirtl-yhdtp0-MuiButtonBase-root-MuiTab-root {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
 }
