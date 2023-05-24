@@ -12,6 +12,7 @@ import Homepage from '../components/content/Homepage';
 import Aboutpage from '../components/content/Aboutpage';
 import Works from '../components/content/Works';
 import Certificates from '../components/content/Certificates';
+import Contact from '../components/content/Contact';
 
 
 function Contents() {
@@ -54,9 +55,7 @@ function Contents() {
           </TabPanel>
 
           <TabPanel value={pagenumber} index={4}>
-            <Typography sx={{ textAlign: "center" }} color="red">
-              اساتید من
-            </Typography>
+            <Contact helmet={"ارتباط با من"} ></Contact>
           </TabPanel>
 
 

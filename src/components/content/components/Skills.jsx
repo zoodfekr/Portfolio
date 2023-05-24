@@ -17,12 +17,18 @@ import { useState } from 'react';
 import { SiLetsencrypt } from 'react-icons/si';
 import CircularProgress from '@mui/material/CircularProgress';
 import Tooltip from '@mui/material/Tooltip';
+import Appcontext from '../../../context/Context';
+import { useContext } from 'react';
 
 
 function CircularProgressWithLabel(props) {
+
+const {mode} = useContext(Appcontext)
+
+
     return (
         <Box sx={{ position: 'relative', display: 'inline-flex', m: 2 }}>
-            <CircularProgress size={180} variant="determinate" {...props} disableShrink={false} sx={{ color: `${props.bgcolor}` }} />
+            <CircularProgress size={130} variant="determinate" {...props} disableShrink={false} sx={{ color: `${props.bgcolor}`,backgroundColor:`${mode ? "whitesmoke" :  "grey" }` }} />
             <Box
                 sx={{
                     top: 0,
@@ -33,10 +39,10 @@ function CircularProgressWithLabel(props) {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    flexDirection: "column"
+                    flexDirection: "column",
                 }}
             >
-                    <Typography variant="caption" component="div" color="black" sx={{ fontSize: "larger" }}>
+                    <Typography variant="caption" component="div" color="text.primary" sx={{ fontSize: "larger" }}>
                         {`${Math.round(props.value)}%`}
                     </Typography>
                     {props.data ? <Box component="img" src={props.data} sx={{ height: 50 }}></Box> : null}
@@ -140,21 +146,23 @@ const Skills = () => {
             flexWrap: "wrap"
         }} >
 
-            <Box sx={{}}>
+            <Box sx={{justifyContent:"center",display:"flex",flexWrap:"wrap"}}>
                 <CircularProgressWithLabel value={vcss} bgcolor={"#80aed0"} data={css} />
                 <CircularProgressWithLabel value={vhtml} bgcolor={"#e44d26"} data={html} />
-            </Box>
-
-            <Box sx={{}}>
                 <CircularProgressWithLabel value={vreactJs} bgcolor={"blue"} data={react} />
                 <CircularProgressWithLabel value={vjavascript} bgcolor={"#ffa500"} data={js} />
-
-            </Box>
-
-            <Box sx={{}}>
                 <CircularProgressWithLabel value={vmui} bgcolor={"#000000"} data={mui} />
                 <CircularProgressWithLabel value={vgit} bgcolor={"#912fed"} data={gitimg} />
             </Box>
+
+            {/* <Box sx={{}}>
+  
+
+            </Box>
+
+            <Box sx={{}}>
+
+            </Box> */}
 
 
 

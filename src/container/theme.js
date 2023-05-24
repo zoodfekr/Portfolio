@@ -17,12 +17,15 @@ export const darktheme = createTheme({
     },
     lightBlue: {
       main: lightBlue[400]
+    },
+    tabs: {
+      main: grey[800]
     }
 
   },
   typography: {
     fontFamily: "vazir, roboto",
-  },
+  }
 
 });
 
@@ -38,9 +41,12 @@ export const lighttheme = createTheme({
     },
     danger: {
       main: "#C70039",
-    }, 
+    },
     lightBlue: {
       main: lightBlue[900]
+    },
+    tabs: {
+      main: grey[100]
     }
 
   },

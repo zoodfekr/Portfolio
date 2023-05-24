@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import { SiHomeadvisor } from "react-icons/si";
 import { TbMessages } from "react-icons/tb";
 import { FaChalkboardTeacher } from "react-icons/fa";
-import { BsFillPersonBadgeFill, BsPersonWorkspace,BsPersonBoundingBox } from "react-icons/bs";
+import { BsFillPersonBadgeFill, BsPersonWorkspace, BsPersonBoundingBox } from "react-icons/bs";
 
 
 
@@ -17,7 +17,7 @@ import Appcontext from '../../context/Context';
 
 function Sidebartabs() {
 
-  const { pagenumber, handleChange, setdrawershow } = useContext(Appcontext);
+  const { pagenumber, handleChange, setdrawershow, theme } = useContext(Appcontext);
 
   const iconstyle = { fontSize: "25px" };
   const tabclass = ' d-flex justify-content-start px-5';
@@ -26,6 +26,7 @@ function Sidebartabs() {
     return {
       id: `sidebar-tab-${index}`,
       "aria-controls": `tabpanel-${index}`,
+
     };
   };
 
@@ -42,19 +43,17 @@ function Sidebartabs() {
       <Tabs
         className='ramintest'
         onClick={() => setdrawershow(false)}
-        sx={{
-          background: "dark",
-        }}
         orientation="vertical"
         variant="scrollable"
         value={pagenumber}
         onChange={handleChange}
         TabIndicatorProps={{
-          style: {
+          sx: {
             backgroundColor: "red",
-            border: "5px solid red",
-            borderRadius: "40px"
+            border: "3px solid red",
+            borderRadius: "40px",
           }
+
         }}
       >
         {tabsdata.map((data => (
@@ -62,11 +61,12 @@ function Sidebartabs() {
             onClick={() => setdrawershow(false)}
             sx={{
               "&.MuiTab-root": {
-                backgroundColor: grey[800],
+                backgroundColor: theme.palette.tabs.main,
                 borderRadius: 2,
                 my: 0.25,
                 mx: 1,
                 minHeight: 0,
+
               },
               "&.Mui-selected": {
                 color: "red",

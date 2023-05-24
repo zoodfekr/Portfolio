@@ -12,6 +12,7 @@ import { darktheme, lighttheme } from "../container/theme";
 import { useState } from "react";
 import Contents from '../container/Contents';
 import Appcontext from "../context/Context";
+import { useEffect } from "react";
 
 const cacheRTL = createCache({
     key: "muirtl",
@@ -30,6 +31,12 @@ function App() {
     };
 
     let theme = (mode ? lighttheme : darktheme);
+
+    useEffect(() => {
+        const darkModePreference = window.matchMedia("(prefers-color-scheme: dark)");
+        setmode(!darkModePreference.matches);
+        darkModePreference.addEventListener("change", () => setmode(!darkModePreference.matches));
+    }, [])
 
 
     return (
