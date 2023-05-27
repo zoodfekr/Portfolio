@@ -1,13 +1,10 @@
 import * as React from 'react';
-import Typography from '@mui/material/Typography';
 import TabPanel from './TabPanel';
 import Grid from "@mui/material/Unstable_Grid2";
 import { useContext } from 'react';
 import Appcontext from '../context/Context';
-import { Box } from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
 import { grey } from '@mui/material/colors';
-import Typed from 'react-typed';
 import Homepage from '../components/content/Homepage';
 import Aboutpage from '../components/content/Aboutpage';
 import Works from '../components/content/Works';

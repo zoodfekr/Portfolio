@@ -2,7 +2,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import { Avatar, Box, Chip, Divider, Typography } from "@mui/material";
 import devinfo from '../../assets/devinfo.jpg';
 import Devinfo from './components/Devinfo';
-import CustomDivider from "./components/CustomDivider";
+import CustomDivider from "../common/CustomDivider";
 import Skills from "./components/Skills";
 import { BsCodeSlash } from "react-icons/bs";
 import { Helmet } from "react-helmet-async";
@@ -10,16 +10,9 @@ import Tooltip from '@mui/material/Tooltip';
 import CountUp from 'react-countup';
 import Slide from '@mui/material/Slide';
 import { useEffect, useState } from "react";
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
 import { aboutpage_tooltip } from '../constants/appdata';
-import { timeline_data } from '../constants/appdata';
 import bg3 from '../../assets/bg3.jpg';
-import { TimelineOppositeContent } from "@mui/lab";
+import SeftTimeline from "./components/Timeline";
 
 
 const Aboutpage = () => {
@@ -32,37 +25,9 @@ const Aboutpage = () => {
 
 
 
-    const timeline_func = <Timeline position="right" sx={{ direction: "ltr" }}>
-        {timeline_data.map((item, index) => (
-            <TimelineItem key={index} sx={{ mt: 0 }}>
-                <TimelineOppositeContent color="text.secondary">
-                    <Typography variant="body1" color="white">
-                        {item.header}
-                    </Typography>
-                </TimelineOppositeContent>
-                <TimelineSeparator>
-                    <TimelineDot color="danger" variant="outlined">
-                        {item.icon}
-                    </TimelineDot>
-                    {index != 3 ? (<TimelineConnector sx={{ border: "1px solid red", }} />) : null}
-                </TimelineSeparator>
-                <TimelineContent>
-
-                    <Typography variant="body2" color="white">
-                        {item.text}
-                    </Typography>
-                </TimelineContent>
-            </TimelineItem>
-        ))}
-    </Timeline>;
-
-
     return (
         <Box sx={{
             backgroundImage: `url(${bg3})`,
-            // backgroundColor: "#B4B4B4",
-            // backgroundColor: "white",
-
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
@@ -88,7 +53,6 @@ const Aboutpage = () => {
                     sx={{ pt: 0, display: "flex", flexDirection: "column" }}
                 >
                     {/* left content */}
-
 
                     <Slide direction="down" in={checked}>
                         <Box sx={{ pl: 5 }}>
@@ -139,15 +103,8 @@ const Aboutpage = () => {
 
                 </Grid>
 
-                <Grid item
-                    xs={0}
-                    sm={0}
-                    md={4}
-                    lg={4}
-                    xl={4}
-                    sx={{ justifyContent: "center", pt: 10 }}
-                >
-                    {/* right content */}
+                {/* right content */}
+                <Grid item xs={0} sm={0} md={4} lg={4} xl={4} sx={{ justifyContent: "center", pt: 10 }} >
                     <Avatar className="avatartest" variant="rounded" alt="Remy Sharp" src={devinfo} sx={{
                         display: {
                             xl: "block",
@@ -161,49 +118,24 @@ const Aboutpage = () => {
                         margin: "0 auto",
                     }} />
 
-
-
                 </Grid>
             </Grid>
 
+            {/* skills */}
             <Grid container>
-
-                {/* skills */}
-                <Grid item
-                    xs={12}
-                    sm={12}
-                    md={12}
-                    lg={12}
-                    xl={12}>
-                    <Slide direction="down" in={checked}>
-                        <Box sx={{}}>
-                            <CustomDivider linecolor={"purple"} color={"purple"} textAlign="center" icon={<BsCodeSlash />}>مهارت های من</CustomDivider>
-                        </Box>
-                    </Slide>
+                <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                    <CustomDivider linecolor={"purple"} color={"purple"} textAlign="center" icon={<BsCodeSlash />}>مهارت های من</CustomDivider>
                     <Skills></Skills>
-
                 </Grid>
-
             </Grid>
 
             {/* education*/}
             <Grid container >
-
                 <Grid item xs={12}>
-
-                    <Slide direction="down" in={checked}>
-                        <Box>
-                            <CustomDivider color={"red"} textAlign="center" linecolor={"red"}>تحصیلات</CustomDivider>
-                        </Box>
-                    </Slide>
-
-                    {timeline_func}
+                    <CustomDivider color={"red"} textAlign="center" linecolor={"red"}>تحصیلات</CustomDivider>
+                    <SeftTimeline></SeftTimeline>
                 </Grid>
-
-
             </Grid>
-
-
 
         </Box>
     )

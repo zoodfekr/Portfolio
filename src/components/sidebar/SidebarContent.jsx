@@ -24,12 +24,12 @@ const SidebarContent = () => {
             {/* SidebarHeader */}
             <SidebarHeader></SidebarHeader>
 
-            <Divider variant="middle" className="my-2" color={"whitesmoke"} />
+            <Divider variant="middle" className="my-2" />
 
             {/* Sidebartabs */}
             <Sidebartabs ></Sidebartabs>
 
-            <Divider variant="middle" className="my-2" color={"whitesmoke"} />
+            <Divider variant="middle" className="my-2"  />
 
             {/* SidebarFooter */}
             <SidebarFooter></SidebarFooter>

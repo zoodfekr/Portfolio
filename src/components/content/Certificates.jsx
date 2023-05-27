@@ -1,6 +1,6 @@
 import { Box, Card, CardMedia, Grid, Slide, Typography } from "@mui/material";
 import { Helmet } from "react-helmet-async"
-import CustomDivider from "./components/CustomDivider";
+import CustomDivider from "../common/CustomDivider";
 import { useEffect, useState } from "react";
 import { TbCertificate } from "react-icons/tb";
 import Slider from "react-slick";
@@ -24,7 +24,7 @@ const Certificates = (props) => {
             </Helmet>
 
             <Box sx={{
-                  backgroundImage: `url(${bg1})`,
+                backgroundImage: `url(${bg1})`,
                 // backgroundColor: "white",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
@@ -36,11 +36,11 @@ const Certificates = (props) => {
             }}>
 
 
-                <Slide direction="down" in={checked}>
-                    <Box sx={{ pl: 5 }}>
-                        <CustomDivider color={"skyblue"} linecolor={"skyblue"} textAlign="center" icon={<TbCertificate></TbCertificate>}>گواهینامه</CustomDivider>
-                    </Box>
-                </Slide>
+
+                <Box sx={{ pl: 5 }}>
+                    <CustomDivider color={"skyblue"} linecolor={"skyblue"} textAlign="center" icon={<TbCertificate></TbCertificate>}>گواهینامه</CustomDivider>
+                </Box>
+
 
 
                 <Grid container sx={{ position: "relative" }}>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import CustomDivider from './CustomDivider';
+import CustomDivider from '../../common/CustomDivider';
 
 
 import html from '../../../assets/icons/html5-original.svg';
@@ -154,17 +154,6 @@ const Skills = () => {
                 <CircularProgressWithLabel value={vmui} bgcolor={"#000000"} data={mui} />
                 <CircularProgressWithLabel value={vgit} bgcolor={"#912fed"} data={gitimg} />
             </Box>
-
-            {/* <Box sx={{}}>
-  
-
-            </Box>
-
-            <Box sx={{}}>
-
-            </Box> */}
-
-
 
         </Box>
     )
