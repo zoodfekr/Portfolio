@@ -23,18 +23,33 @@ const Certificates = (props) => {
                 </title>
             </Helmet>
 
-            <Box sx={{
-                backgroundImage: `url(${bg1})`,
+            <Card sx={{
+                // backgroundImage: `url(${bg1})`,
                 // backgroundColor: "white",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
+                // backgroundRepeat: "no-repeat",
+                // backgroundPosition: "center",
+                // backgroundSize: "cover",
                 height: "100vh",
                 width: "100%",
                 overflowX: "hidden",
-                overflowY: "auto"
+                overflowY: "auto",
+                background: "rgba(0,0,0,0.2)"
             }}>
 
+                <Box sx={{
+                    position: "absolute",
+                    backgroundImage: `url(${bg1})`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    height: "100vh",
+                    width: "100%",
+                    overflowX: "hidden",
+                    overflowY: "auto",
+                    opacity: 0.2,
+                    zIndex: "-10"
+                }}>
+                </Box>
 
 
                 <Box sx={{ pl: 5 }}>
@@ -44,6 +59,12 @@ const Certificates = (props) => {
 
 
                 <Grid container sx={{ position: "relative" }}>
+
+                    <Box component="div" class="alert alert-warning w-100 mx-5 mt-2" role="alert">
+                        <Typography dir="rtl" align="justify">
+                            مدارکی که در زیر قرار داده شده مدارک دوره های آنلاینی هست که من طی کردم، شاید ارزشی نداشته باشند فقط جهت نشان دادن دورهای طی شده قرار دادم.
+                        </Typography>
+                    </Box>
 
 
                     {slider_image.map((value, index) => (
@@ -62,7 +83,7 @@ const Certificates = (props) => {
 
 
 
-            </Box>
+            </Card>
         </>
     )
 };

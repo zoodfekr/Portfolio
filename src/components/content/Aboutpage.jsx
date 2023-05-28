@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Unstable_Grid2";
-import { Avatar, Box, Chip, Divider, Typography } from "@mui/material";
+import { Avatar, Box, Card, Chip, Divider, Typography } from "@mui/material";
 import devinfo from '../../assets/devinfo.jpg';
 import Devinfo from './components/Devinfo';
 import CustomDivider from "../common/CustomDivider";
@@ -26,17 +26,32 @@ const Aboutpage = () => {
 
 
     return (
-        <Box sx={{
-            backgroundImage: `url(${bg3})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
+        <Card sx={{
+            // backgroundImage: `url(${bg3})`,
+            // backgroundRepeat: "no-repeat",
+            // backgroundPosition: "center",
+            // backgroundSize: "cover",
             height: "100vh",
             width: "100%",
             overflowX: "hidden",
-            overflowY: "auto"
+            overflowY: "auto",
+            background: "rgba(0,0,0,0.2)"
         }}>
 
+            <Box sx={{
+                position:"absolute",
+                backgroundImage: `url(${bg3})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                height: "100vh",
+                width: "100%",
+                overflowX: "hidden",
+                overflowY: "auto",
+                opacity:0.2,
+                zIndex:"-10"
+            }}>
+            </Box>
 
             <Helmet>
                 <title>  درباره من </title>
@@ -137,7 +152,7 @@ const Aboutpage = () => {
                 </Grid>
             </Grid>
 
-        </Box>
+        </Card >
     )
 };
 

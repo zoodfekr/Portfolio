@@ -6,7 +6,7 @@ import Appcontext from "../../context/Context";
 import { useContext, useRef, useState } from "react";
 import { yupSchema } from "../constants/yup";
 import { useFormik } from 'formik';
-import ReCAPTCHA from "react-google-recaptcha"; 
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 
@@ -55,7 +55,16 @@ const Contact = (props) => {
 
                 <CustomDivider color={"skyblue"} linecolor={"skyblue"} textAlign={"center"}>ارتباط با من</CustomDivider>
 
+
+
                 <Grid container >
+                    
+                    <Box component="div" class="alert alert-warning w-100 mx-5 mt-2" role="alert">
+                        <Typography dir="rtl" align="justify">
+                            این پورتفولیو به دلیل نداشتن بک اند هنوز قابلیت ارسال پیام ندارد و فقط این فرم برای نمایش قرار داده شده.
+                        </Typography>
+                    </Box>
+
                     <Grid xs={12} sx={12} md={8} lg={6} sx={{ p: 4 }}>
                         <Card sx={{
                             background: mode ? "linear-gradient(45deg, rgba(255,255,255,0.7) 0%, rgba(0,0,255,0.4) 100%)" : "linear-gradient(45deg, rgba(255,255,255,0.2) 0%, rgba(0,0,255,0.2) 100%)",
