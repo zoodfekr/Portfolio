@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import Typed from 'react-typed';
+
 import homebg from '../../assets/home_bg.jpg'
 import { Helmet } from "react-helmet-async";
 
@@ -26,7 +26,7 @@ const Homepage = () => {
             </Helmet>
 
             <Typography variant="h2">
-                <Typed
+                {/* <Typed
                     strings={['رامین زودفکر', 'Ramin zoodfekr']}
                     typeSpeed={100}
                     backSpeed={50}
@@ -35,10 +35,10 @@ const Homepage = () => {
                 // loop
                 >
                     <input type="text" className='glass' />
-                </Typed>
+                </Typed> */}
             </Typography>
             <Typography variant='h4'>
-                <Typed
+                {/* <Typed
                     strings={['توسعه دهنده فرانت اند', 'Front-End Developer']}
                     typeSpeed={100}
                     backSpeed={50}
@@ -46,7 +46,7 @@ const Homepage = () => {
                     loop
                 >
                     <input type="text" className='glass' />
-                </Typed>
+                </Typed> */}
             </Typography>
         </Box>
     )
