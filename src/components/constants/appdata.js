@@ -71,13 +71,12 @@ export const aboutpage_tooltip = [
 ];
 
 export const timeline_data = [
-    { icon: <BiBookAlt style={{ color: "white", fontSize: "20px" }}></BiBookAlt>, header: "مقطع راهنمایی", text: "مدرسه راهنمایی شهید ارمبو" },
-    { icon: <BiBookAlt style={{ color: "white", fontSize: "20px" }}></BiBookAlt>, header: "دیپلم", text: "دبیرستان  دکتر حسابی - ریاضی فیزیک " },
-    { icon: <BiBookAlt style={{ color: "white", fontSize: "20px" }}></BiBookAlt>, header: "مقطع پیش دانشگاهی ", text: " پیش دانشگاهی امام رضا (ع)- ریاضی فیزیک" },
+
+
     { icon:<BiBookAlt style={{ color: "white", fontSize: "20px" }}></BiBookAlt>, header: "کارشناسی", text: "دانشگاه تهران - مخابرات" },
 ];
 
 
-export const slider_image = [{ img: html }, { img: flexbox }, { img: sass }, { img: bootstrap }, { img: js }, { img: es }]
+export const slider_image = [{ img: html }, { img: sass }, { img: bootstrap }, { img: js }, { img: es }]
 
 

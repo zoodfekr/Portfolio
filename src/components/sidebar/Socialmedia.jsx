@@ -8,9 +8,8 @@ const Socialmedia = () => {
 
     const socialmedia_data = [
         { aria_label: "Github", href: "https://github.com/zoodfekr", text: "Githab", icon: <GoMarkGithub style={{ fontSiz: "25px !important" }}></GoMarkGithub> },
-        { aria_label: "Instagram", href: "https://www.instagram.com/ramin.id/?igshid=ZGUzMzM3NWJiOQ%3D%3D", text: "Instagram", icon: <BsInstagram style={{ fontSiz: "25px !important" }}></BsInstagram> },
         { aria_label: "skype", href: "https://join.skype.com/invite/MdJneJzpoQ6i", text: "skype", icon: <AiFillSkype style={{ fontSiz: "25px !important" }}></AiFillSkype> },
-        // { aria_label: "Whatsapp", href: "https://github.com/zoodfekr", text: "Whatsapp", icon: <SiWhatsapp style={{ fontSiz: "25px !important" }}></SiWhatsapp> },
+
     ];
 
     return (

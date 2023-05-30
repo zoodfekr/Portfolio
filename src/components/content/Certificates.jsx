@@ -60,11 +60,7 @@ const Certificates = (props) => {
 
                 <Grid container sx={{ position: "relative" }}>
 
-                    <Box component="div" class="alert alert-warning w-100 mx-5 mt-2" role="alert">
-                        <Typography dir="rtl" align="justify">
-                            مدارکی که در زیر قرار داده شده مدارک دوره های آنلاینی هست که من طی کردم، شاید ارزشی نداشته باشند فقط جهت نشان دادن دورهای طی شده قرار دادم.
-                        </Typography>
-                    </Box>
+
 
 
                     {slider_image.map((value, index) => (

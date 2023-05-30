@@ -39,7 +39,7 @@ const Aboutpage = () => {
         }}>
 
             <Box sx={{
-                position:"absolute",
+                position: "absolute",
                 backgroundImage: `url(${bg3})`,
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
@@ -48,8 +48,8 @@ const Aboutpage = () => {
                 width: "100%",
                 overflowX: "hidden",
                 overflowY: "auto",
-                opacity:0.2,
-                zIndex:"-10"
+                opacity: 0.2,
+                zIndex: "-10"
             }}>
             </Box>
 
@@ -79,26 +79,7 @@ const Aboutpage = () => {
 
                         <Grid
                             sx={{ display: { xs: "none", sm: "flex" }, justifyContent: "center" }}
-                            xs={0}
-                            sm={4}
-                            md={4}
-                            lg={6}
-                            xl={6}>
-
-                            <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }} className="col-xs-0 col-sm-12 col-lg-12 col-xl-6" >
-                                {aboutpage_tooltip.map((data, index) => (
-                                    <Tooltip key={index} arrow placement="right" title={data.title}>
-                                        <Chip sx={{ backgroundColor: `${data.backgroundColor}`, mt: 2 }} label={
-                                            <Typography sx={{ fontSize: "25px" }}>
-                                                {data.icon}
-                                                <CountUp end={data.end} start={0} duration={5} className="mx-4" />
-                                            </Typography>} >
-                                        </Chip>
-                                    </Tooltip>
-                                ))}
-                            </Box>
-
-
+                            xs={0} sm={4} md={4} lg={6} xl={6}>
                         </Grid>
 
                         <Grid

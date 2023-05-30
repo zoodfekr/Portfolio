@@ -123,3 +123,9 @@ body {
   margin-right: 0px !important;
   margin-left: 0px !important;
 }
+
+.R-rotate{
+  transition: all 2s;
+  transform: rotate(180deg);
+  animation-iteration-count: infinite;
+}

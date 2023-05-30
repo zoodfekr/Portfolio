@@ -59,11 +59,7 @@ const Contact = (props) => {
 
                 <Grid container >
                     
-                    <Box component="div" class="alert alert-warning w-100 mx-5 mt-2" role="alert">
-                        <Typography dir="rtl" align="justify">
-                            این پورتفولیو به دلیل نداشتن بک اند هنوز قابلیت ارسال پیام ندارد و فقط این فرم برای نمایش قرار داده شده.
-                        </Typography>
-                    </Box>
+
 
                     <Grid xs={12} sx={12} md={8} lg={6} sx={{ p: 4 }}>
                         <Card sx={{
@@ -149,7 +145,7 @@ const Contact = (props) => {
 
                                     <ReCAPTCHA
                                         ref={captcha}
-                                        sitekey={process.env.REACT_APP_recaptcha}
+                                        sitekey="6LcyqIkjAAAAAPABktGYTLvjaXenTBmiiJKLBOE9"
                                         theme={mode ? "light" : "dark"}
                                         hl="fa"
                                         onChange={(value) => {
