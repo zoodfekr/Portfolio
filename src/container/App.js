@@ -4,8 +4,6 @@ import { CacheProvider } from "@emotion/react";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 import createCache from "@emotion/cache";
 import { prefixer } from "stylis";
-import { Typography, Box, Divider, Avatar, Drawer } from "@mui/material";
-import { grey } from "@mui/material/colors";
 import Grid from "@mui/material/Unstable_Grid2";
 import Sidebar from "./Sidebar";
 import { darktheme, lighttheme } from "../container/theme";

@@ -20,7 +20,10 @@ export const darktheme = createTheme({
     },
     tabs: {
       main: grey[800]
-    }
+    },
+    background: {
+      main: "#27374D"
+    },
 
   },
   typography: {
@@ -47,8 +50,10 @@ export const lighttheme = createTheme({
     },
     tabs: {
       main: grey[100]
-    }
-
+    },
+    background: {
+      main: "#DDE6ED"
+    },
   },
   typography: {
     fontFamily: "vazir, roboto",

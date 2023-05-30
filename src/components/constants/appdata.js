@@ -39,36 +39,10 @@ export const card_data = [
         address: "https://vocabulary-training-localstorage.github.io/",
         code: "https://github.com/zoodfekr/Vocabulary-training-LocalStorage",
     },
-    {
-        title: "وب اپلیکیشن پورتفولیو",
-        text: "پروژه پورتفولیو، برنامه تحت وبی که اکنون در حال کارکردن با آن هستید. این پروژه هم با استفاده از react , Mui  ساخته شده. ",
-        img: `${portfolio}`,
-        color: "skyblue",
-        address: "#",
-        code: "https://github.com/zoodfekr/portfolio",
-    },
+
 ];
 
-export const aboutpage_tooltip = [
-    {
-        title: "دوره های طی شده",
-        backgroundColor: "#FF1919",
-        end: 9,
-        icon: <MdOutlinePlayLesson></MdOutlinePlayLesson>,
-    },
-    {
-        title: "تعداد استادهای من",
-        backgroundColor: "#FF6969",
-        end: 7,
-        icon: <FaChalkboardTeacher></FaChalkboardTeacher>,
-    },
-    {
-        title: " تعداد پروژه های من",
-        backgroundColor: "#0EA293",
-        end: 6,
-        icon: <BiCodeCurly></BiCodeCurly>,
-    },
-];
+
 
 export const timeline_data = [
 

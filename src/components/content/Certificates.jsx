@@ -1,15 +1,16 @@
 import { Box, Card, CardMedia, Grid, Slide, Typography } from "@mui/material";
 import { Helmet } from "react-helmet-async"
 import CustomDivider from "../common/CustomDivider";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TbCertificate } from "react-icons/tb";
 import Slider from "react-slick";
 import { slider_image } from "../constants/appdata";
 import bg1 from '../../assets/bg1.jpg';
+import Appcontext from "../../context/Context";
 
 const Certificates = (props) => {
     const [checked, setChecked] = useState(false);
-
+    const { mode,theme } = useContext(Appcontext);
     useEffect(() => {
         setTimeout(() => setChecked(true), 250)
         return () => setChecked(false);
@@ -24,32 +25,17 @@ const Certificates = (props) => {
             </Helmet>
 
             <Card sx={{
-                // backgroundImage: `url(${bg1})`,
-                // backgroundColor: "white",
-                // backgroundRepeat: "no-repeat",
-                // backgroundPosition: "center",
-                // backgroundSize: "cover",
+                // backgroundImage: `url(${bg1})`,,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
                 height: "100vh",
                 width: "100%",
                 overflowX: "hidden",
                 overflowY: "auto",
-                background: "rgba(0,0,0,0.2)"
+                backgroundColor: theme.palette.background.main,
             }}>
 
-                <Box sx={{
-                    position: "absolute",
-                    backgroundImage: `url(${bg1})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    height: "100vh",
-                    width: "100%",
-                    overflowX: "hidden",
-                    overflowY: "auto",
-                    opacity: 0.2,
-                    zIndex: "-10"
-                }}>
-                </Box>
 
 
                 <Box sx={{ pl: 5 }}>

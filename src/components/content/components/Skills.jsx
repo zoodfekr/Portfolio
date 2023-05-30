@@ -23,31 +23,37 @@ import { useContext } from 'react';
 
 function CircularProgressWithLabel(props) {
 
-const {mode} = useContext(Appcontext)
+    const { mode } = useContext(Appcontext)
 
 
     return (
-        <Box sx={{ position: 'relative', display: 'inline-flex', m: 2 }}>
-            <CircularProgress size={130} variant="determinate" {...props} disableShrink={false} sx={{ color: `${props.bgcolor}`,backgroundColor:`${mode ? "whitesmoke" :  "grey" }` }} />
-            <Box
-                sx={{
-                    top: 0,
-                    left: 0,
-                    bottom: 0,
-                    right: 0,
-                    position: 'absolute',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexDirection: "column",
-                }}
-            >
+        <Box sx={{display:"flex", justifyContent:"center",flexDirection:"column",alignItems:"center"}}>
+            <Box sx={{ position: 'relative', display: 'inline-flex', m: 2 }}>
+                <CircularProgress size={130} variant="determinate" {...props} disableShrink={false} sx={{ color: `${props.bgcolor}`, backgroundColor: `${mode ? "whitesmoke" : "grey"}` }} />
+                <Box
+                    sx={{
+                        top: 0,
+                        left: 0,
+                        bottom: 0,
+                        right: 0,
+                        position: 'absolute',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexDirection: "column",
+                    }}
+                >
                     <Typography variant="caption" component="div" color="text.primary" sx={{ fontSize: "larger" }}>
                         {`${Math.round(props.value)}%`}
                     </Typography>
                     {props.data ? <Box component="img" src={props.data} sx={{ height: 50 }}></Box> : null}
-        
+
+                </Box>
+
             </Box>
+            <Typography variant="caption" component="div" color="text.primary" sx={{ fontSize: "larger" }}>
+                {props.name}
+            </Typography>
         </Box>
     );
 }
@@ -136,23 +142,21 @@ const Skills = () => {
         <Box sx={{
             width: '95%',
             m: "auto",
-            // border: "1px solid purple",
             mt: 1, py: 1,
             borderRadius: "50px",
             mb: 2,
-            // backgroundColor: "rgba(94, 94, 94, 0.431)",
             display: "flex",
             justifyContent: "space-around",
             flexWrap: "wrap"
         }} >
 
-            <Box sx={{justifyContent:"center",display:"flex",flexWrap:"wrap"}}>
-                <CircularProgressWithLabel value={vcss} bgcolor={"#80aed0"} data={css} />
-                <CircularProgressWithLabel value={vhtml} bgcolor={"#e44d26"} data={html} />
-                <CircularProgressWithLabel value={vreactJs} bgcolor={"blue"} data={react} />
-                <CircularProgressWithLabel value={vjavascript} bgcolor={"#ffa500"} data={js} />
-                <CircularProgressWithLabel value={vmui} bgcolor={"#000000"} data={mui} />
-                <CircularProgressWithLabel value={vgit} bgcolor={"#912fed"} data={gitimg} />
+            <Box sx={{ justifyContent: "center", display: "flex", flexWrap: "wrap" }}>
+                <CircularProgressWithLabel value={vcss} bgcolor={"#80aed0"} data={css} name={"Css"}/>
+                <CircularProgressWithLabel value={vhtml} bgcolor={"#e44d26"} data={html}  name={"Html"}/>
+                <CircularProgressWithLabel value={vreactJs} bgcolor={"blue"} data={react}  name={"React"}/>
+                <CircularProgressWithLabel value={vjavascript} bgcolor={"#ffa500"} data={js}  name={"JavaScript"}/>
+                <CircularProgressWithLabel value={vmui} bgcolor={"#000000"} data={mui}  name={"Mui"}/>
+                <CircularProgressWithLabel value={vgit} bgcolor={"#912fed"} data={gitimg}  name={"Git"}/>
             </Box>
 
         </Box>

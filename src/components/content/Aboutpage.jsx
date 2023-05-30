@@ -9,14 +9,16 @@ import { Helmet } from "react-helmet-async";
 import Tooltip from '@mui/material/Tooltip';
 import CountUp from 'react-countup';
 import Slide from '@mui/material/Slide';
-import { useEffect, useState } from "react";
-import { aboutpage_tooltip } from '../constants/appdata';
+import { useContext, useEffect, useState } from "react";
+import { aboutpage_tooltip, slider_image } from '../constants/appdata';
 import bg3 from '../../assets/bg3.jpg';
 import SeftTimeline from "./components/Timeline";
+import Appcontext from "../../context/Context";
 
 
 const Aboutpage = () => {
     const [checked, setChecked] = useState(false);
+    const { mode, theme } = useContext(Appcontext);
 
     useEffect(() => {
         setTimeout(() => setChecked(true), 500)
@@ -35,38 +37,19 @@ const Aboutpage = () => {
             width: "100%",
             overflowX: "hidden",
             overflowY: "auto",
-            background: "rgba(0,0,0,0.2)"
+            backgroundColor: theme.palette.background.main,
+
         }}>
 
-            <Box sx={{
-                position: "absolute",
-                backgroundImage: `url(${bg3})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                height: "100vh",
-                width: "100%",
-                overflowX: "hidden",
-                overflowY: "auto",
-                opacity: 0.2,
-                zIndex: "-10"
-            }}>
-            </Box>
+
 
             <Helmet>
                 <title>  درباره من </title>
             </Helmet>
 
-            <Grid container >
+            <Grid container sx={{ border: "1px solid purple" }}>
 
-                <Grid container
-                    xs={12}
-                    sm={12}
-                    md={8}
-                    lg={8}
-                    xl={8}
-                    sx={{ pt: 0, display: "flex", flexDirection: "column" }}
-                >
+                <Grid container sx={{ pt: 0, border: "1px solid green" }}  >
                     {/* left content */}
 
                     <Slide direction="down" in={checked}>
@@ -75,12 +58,7 @@ const Aboutpage = () => {
                         </Box>
                     </Slide>
 
-                    <Box sx={{ display: "flex" }}>
-
-                        <Grid
-                            sx={{ display: { xs: "none", sm: "flex" }, justifyContent: "center" }}
-                            xs={0} sm={4} md={4} lg={6} xl={6}>
-                        </Grid>
+                    <Box sx={{ display: "flex", border: "red 1px solid ", px: 3 }}>
 
                         <Grid
                             xs={12}
@@ -93,14 +71,13 @@ const Aboutpage = () => {
                             <Devinfo>ایمیل : Zoodfekr.r@gmail.com</Devinfo>
                             <Devinfo>سن : <CountUp end={27} start={0} duration={5} /></Devinfo>
                             <Devinfo>متولد : تهران</Devinfo>
+                            <Devinfo>تحصیلات : کارشناسی (مخابرات)</Devinfo>
+
                         </Grid>
 
                     </Box>
 
-                </Grid>
-
-                {/* right content */}
-                <Grid item xs={0} sm={0} md={4} lg={4} xl={4} sx={{ justifyContent: "center", pt: 10 }} >
+                    <Box>
                     <Avatar className="avatartest" variant="rounded" alt="Remy Sharp" src={devinfo} sx={{
                         display: {
                             xl: "block",
@@ -109,12 +86,20 @@ const Aboutpage = () => {
                             sm: "none",
                             xs: "none",
                         },
-                        height: 250,
-                        width: 250,
+                        width: 350,
+                        height: "auto",
                         margin: "0 auto",
                     }} />
+                    </Box>
 
                 </Grid>
+
+
+
+
+
+
+
             </Grid>
 
             {/* skills */}
@@ -125,14 +110,21 @@ const Aboutpage = () => {
                 </Grid>
             </Grid>
 
-            {/* education*/}
+
             <Grid container >
                 <Grid item xs={12}>
-                    <CustomDivider color={"red"} textAlign="center" linecolor={"red"}>تحصیلات</CustomDivider>
-                    <SeftTimeline></SeftTimeline>
+                    <CustomDivider color={"red"} textAlign="center" linecolor={"red"}>دوره های طی شده</CustomDivider>
                 </Grid>
+                {slider_image.map((value, index) => (
+                    <Slide in={checked} direction="up" style={{ transitionDelay: checked ? `${(index * 250)}ms` : "0ms" }} >
+                        <Grid key={index} item xs={12} sm={6} md={6} lg={4} xl={4} sx={{ my: 2, display: "flex", justifyContent: "center" }}>
+                            <Box component="div" sx={{ p: 1 }}>
+                                <Box component="img" sx={{ height: "auto", maxWidth: "400px", width: 1 }} src={value.img} className="scale" />
+                            </Box>
+                        </Grid>
+                    </Slide>
+                ))}
             </Grid>
-
         </Card >
     )
 };

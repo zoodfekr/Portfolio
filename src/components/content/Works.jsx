@@ -15,7 +15,7 @@ import Appcontext from "../../context/Context";
 import { grey } from "@mui/material/colors";
 
 const Works = (props) => {
-    const { mode } = useContext(Appcontext);
+    const { mode,theme } = useContext(Appcontext);
     const [checked, setChecked] = useState(false);
 
 
@@ -26,15 +26,16 @@ const Works = (props) => {
 
 
     return (
-        <Box sx={{
-            backgroundImage: `url(${bg2})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
+        <Card sx={{
+            // backgroundImage: `url(${bg2})`,
+            // backgroundRepeat: "no-repeat",
+            // backgroundPosition: "center",
+            // backgroundSize: "cover",
             height: "100vh",
             width: "100%",
             overflowX: "hidden",
-            overflowY: "auto"
+            overflowY: "auto",
+            backgroundColor: theme.palette.background.main,
         }}>
 
 
@@ -46,15 +47,15 @@ const Works = (props) => {
 
             <Grid container>
                 {card_data.map((data, index) => (
-                    <Grid key={index} item xs={12} sm={6} md={6} lg={3} xl={3} sx={{ display: "flex", justifyContent: "center", mt: 2, px: 1 }} className="scale">
+                    <Grid key={index} item xs={12} sm={6} md={6} lg={4} xl={4} sx={{ display: "flex", justifyContent: "center", mt: 2, px: 1 }} className="scale">
                         <Slide in={checked} direction="up" style={{ transitionDelay: checked ? `${(index * 250)}ms` : "0ms" }} >
-                            <Card sx={{ maxWidth: 345, border: `${(mode ? data.color : grey[900])} 5px solid `, borderRadius: "30px" }} >
+                            <Card sx={{ maxWidth: 430, border: `${(mode ? data.color : "#526D82")} 1px solid `, borderRadius: "30px" }} >
                                 <CardMedia sx={{ height: 250 }} title="green iguana" image={data.img} />
-                                <CardContent sx={{ background: (mode ? data.color : grey[800]) }}>
+                                <CardContent sx={{ background: (mode ? data.color : "#526D82") }}>
                                     <Typography gutterBottom variant="h5" component="div" dir="rtl" color="text.primary">{data.title}</Typography>
                                     <Typography variant="body2" color="text.primary" dir="rtl" sx={{ minHeight: "80px" }} align="justify"> {data.text}</Typography>
                                 </CardContent>
-                                <CardActions sx={{ background: (mode ? data.color : grey[800]) }}>
+                                <CardActions sx={{ background: (mode ? data.color :"#526D82") }}>
                                     <a className="card_button " href={data.address} target="_blank" rel="noopener noreferrer">
                                         <Typography color="text.primary" sx={{ mx: 2, fontSize: "18px" }}>نمایش <AiFillEye></AiFillEye></Typography>
                                     </a>
@@ -67,7 +68,7 @@ const Works = (props) => {
                     </Grid>
                 ))}
             </Grid>
-        </Box>
+        </Card>
 
     )
 };

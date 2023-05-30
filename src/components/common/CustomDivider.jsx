@@ -25,9 +25,10 @@ const CustomDivider = ({ children, color, icon, textAlign, cimg, linecolor }) =>
                             color="white"
                             sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
                         >
+                            {children}
                             {{ cimg } ? <Box component="img" src={cimg} sx={{ height: 30 }}></Box> : null}
                             {{ icon }.length > 1 ? null : <Box sx={{ ml: 1, fontSize: "larger" }}>{icon}</Box>}
-                            {children}
+                            
                         </Typography>} />
                 </Divider>
             </Slide>
