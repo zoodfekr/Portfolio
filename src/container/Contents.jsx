@@ -3,7 +3,7 @@ import TabPanel from './TabPanel';
 import Grid from "@mui/material/Unstable_Grid2";
 import { useContext } from 'react';
 import Appcontext from '../context/Context';
-import SwipeableViews from 'react-swipeable-views';
+
 import { grey } from '@mui/material/colors';
 import Homepage from '../components/content/Homepage';
 import Aboutpage from '../components/content/Aboutpage';
@@ -26,11 +26,7 @@ function Contents() {
         xl={10}
         sx={{ backgroundColor: grey[900] }}
       >
-        <SwipeableViews
-          axis={theme.direction === 'ltr' ? 'x-reverse' : 'x'}
-          index={pagenumber}
-          onChangeIndex={handleChange}
-        >
+
 
 
           <TabPanel value={pagenumber} index={0}>
@@ -56,7 +52,7 @@ function Contents() {
           </TabPanel>
 
 
-        </SwipeableViews>
+
 
       </Grid >
     </>
