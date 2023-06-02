@@ -52,7 +52,7 @@ export const lighttheme = createTheme({
       main: grey[100]
     },
     background: {
-      main: "#DDE6ED"
+      main: "#F6F1F1"
     },
   },
   typography: {

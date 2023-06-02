@@ -3,6 +3,9 @@ import { Box, Typography } from "@mui/material";
 import homebg from '../../assets/home_bg.jpg'
 import { Helmet } from "react-helmet-async";
 
+
+
+
 const Homepage = () => {
 
 
@@ -24,6 +27,7 @@ const Homepage = () => {
             <Helmet>
                 <title> صفحه اصلی </title>
             </Helmet>
+
 
             <Typography variant="h2">
                 {/* <Typed

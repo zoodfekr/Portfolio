@@ -47,52 +47,53 @@ const Aboutpage = () => {
                 <title>  درباره من </title>
             </Helmet>
 
-            <Grid container sx={{ border: "1px solid purple" }}>
+            <Grid container sx={{ display: "flex", flexDirection: "column" }}>
 
-                <Grid container sx={{ pt: 0, border: "1px solid green" }}  >
-                    {/* left content */}
 
-                    <Slide direction="down" in={checked}>
-                        <Box sx={{ pl: 5 }}>
-                            <CustomDivider linecolor={"green"} color={"green"}> توسعه دهنده فرانت اند </CustomDivider>
-                        </Box>
-                    </Slide>
 
-                    <Box sx={{ display: "flex", border: "red 1px solid ", px: 3 }}>
 
-                        <Grid
-                            xs={12}
-                            sm={8}
-                            md={8}
-                            lg={6}
-                            xl={6}>
-                            <Devinfo>نام : رامین</Devinfo>
-                            <Devinfo>نام خانوادگی : زودفکر</Devinfo>
-                            <Devinfo>ایمیل : Zoodfekr.r@gmail.com</Devinfo>
-                            <Devinfo>سن : <CountUp end={27} start={0} duration={5} /></Devinfo>
-                            <Devinfo>متولد : تهران</Devinfo>
-                            <Devinfo>تحصیلات : کارشناسی (مخابرات)</Devinfo>
+                <Slide direction="down" in={checked}>
+                    <Box sx={{}}>
+                        <CustomDivider textAlign={"center"} linecolor={"green"} color={"green"}> توسعه دهنده فرانت اند </CustomDivider>
+                    </Box>
+                </Slide>
 
-                        </Grid>
+                <Box sx={{ display: "flex", px: 4,justifyContent:"space-evenly" }}>
 
+                    <Grid item
+                        xs={12}
+                        sm={8}
+                        md={8}
+                        lg={6}
+                        xl={6}>
+                        <Devinfo>نام : رامین</Devinfo>
+                        <Devinfo>نام خانوادگی : زودفکر</Devinfo>
+                        <Devinfo>ایمیل : Zoodfekr.r@gmail.com</Devinfo>
+                        <Devinfo>سن : <CountUp end={27} start={0} duration={5} /></Devinfo>
+                        <Devinfo>متولد : تهران</Devinfo>
+                        <Devinfo>تحصیلات : کارشناسی (مخابرات)</Devinfo>
+
+                    </Grid>
+
+                    <Box sx={{ pt: 5 }}>
+                        <Avatar className="avatartest" variant="rounded" alt="Remy Sharp" src={devinfo} sx={{
+                            display: {
+                                xl: "block",
+                                lg: "block",
+                                md: "block",
+                                sm: "none",
+                                xs: "none",
+                            },
+                            width: 300,
+                            height: 300,
+                            // margin: "0 auto",
+                        }} />
                     </Box>
 
-                    <Box>
-                    <Avatar className="avatartest" variant="rounded" alt="Remy Sharp" src={devinfo} sx={{
-                        display: {
-                            xl: "block",
-                            lg: "block",
-                            md: "block",
-                            sm: "none",
-                            xs: "none",
-                        },
-                        width: 350,
-                        height: "auto",
-                        margin: "0 auto",
-                    }} />
-                    </Box>
+                </Box>
 
-                </Grid>
+
+
 
 
 

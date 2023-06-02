@@ -20,7 +20,7 @@ function Sidebartabs() {
   const { pagenumber, handleChange, setdrawershow, theme } = useContext(Appcontext);
 
   const iconstyle = { fontSize: "25px" };
-  const tabclass = ' d-flex justify-content-start px-5';
+  const tabclass = ' d-flex justify-content-start mx-2 px-3';
 
   const tabProps = (index) => {
     return {
@@ -64,8 +64,9 @@ function Sidebartabs() {
                 backgroundColor: theme.palette.tabs.main,
                 borderRadius: 2,
                 my: 0.25,
-                mx: 1,
+                mx: 0,
                 minHeight: 0,
+                px:0
 
               },
               "&.Mui-selected": {

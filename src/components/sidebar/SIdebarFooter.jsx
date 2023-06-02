@@ -20,9 +20,9 @@ const SidebarFooter = () => {
 
             <Divider variant="middle" className="my-2" color={"whitesmoke"} />
 
-            <Box sx={{ mt: 2 }} className="R-rotate">
-                <Typography variant="h2" color="text.primary"  >
-                    <FaReact className="react_icon mx-1" style={{ color: theme.palette.lightBlue.main}}></FaReact>
+            <Box sx={{ mt: 4 }} >
+                <Typography variant="h1" color="text.primary"  >
+                    <FaReact className="react_icon mx-1 R-rotate" style={{ color: theme.palette.lightBlue.main}}></FaReact>
                 </Typography>
             </Box>
 
