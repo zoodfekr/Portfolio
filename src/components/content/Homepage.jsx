@@ -22,7 +22,6 @@ const Homepage = () => {
             alignItems: "center",
             flexDirection: "column"
 
-
         }}>
             <Helmet>
                 <title> صفحه اصلی </title>

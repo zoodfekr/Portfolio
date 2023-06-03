@@ -7,7 +7,7 @@ import { useContext, useRef, useState } from "react";
 import { yupSchema } from "../constants/yup";
 import { useFormik } from 'formik';
 import ReCAPTCHA from "react-google-recaptcha";
-
+import emailjs from '@emailjs/browser';
 
 
 
@@ -27,10 +27,22 @@ const Contact = (props) => {
         },
         validationSchema: yupSchema,
         onSubmit: (values) => {
-            console.log(values)
+            sendEmail(values);
         },
     });
 
+
+    const sendEmail = (values) => {
+        // e.preventDefault();
+        console.log("called senemail");
+        emailjs.send('service_hnwj5kb', 'template_81k84fq', values, '574znhgJfYqReJ0Ml')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+        formik.resetForm();
+    };
 
 
     return (
@@ -56,10 +68,7 @@ const Contact = (props) => {
                 <CustomDivider color={"skyblue"} linecolor={"skyblue"} textAlign={"center"}>ارتباط با من</CustomDivider>
 
 
-
                 <Grid container >
-                    
-
 
                     <Grid xs={12} sx={12} md={8} lg={6} sx={{ p: 4 }}>
                         <Card sx={{
@@ -145,7 +154,8 @@ const Contact = (props) => {
 
                                     <ReCAPTCHA
                                         ref={captcha}
-                                        sitekey="6LcyqIkjAAAAAPABktGYTLvjaXenTBmiiJKLBOE9"
+                                        sitekey="6Ldga0EmAAAAABR7Hre7Wp5TkKNmbJOyv33N5Elt
+                                        "
                                         theme={mode ? "light" : "dark"}
                                         hl="fa"
                                         onChange={(value) => {
@@ -165,7 +175,7 @@ const Contact = (props) => {
                                                 {formik.errors.recaptcha}
                                             </Typography>
                                         )}
-
+                                    
                                     <Button
                                         type="submit"
                                         color="success"
@@ -175,6 +185,7 @@ const Contact = (props) => {
                                     >
                                         ارسال کن
                                     </Button>
+
                                 </CardActions>
                             </form>
 
@@ -183,9 +194,6 @@ const Contact = (props) => {
 
                     </Grid>
                 </Grid>
-
-
-
 
 
 
