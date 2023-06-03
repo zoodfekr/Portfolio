@@ -8,7 +8,7 @@ import { yupSchema } from "../constants/yup";
 import { useFormik } from 'formik';
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from '@emailjs/browser';
-
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Contact = (props) => {
@@ -32,21 +32,27 @@ const Contact = (props) => {
     });
 
 
+
     const sendEmail = (values) => {
-        // e.preventDefault();
-        console.log("called senemail");
+        const id = toast.loading("در حال ارسال پیام")
         emailjs.send('service_hnwj5kb', 'template_81k84fq', values, '574znhgJfYqReJ0Ml')
             .then((result) => {
                 console.log(result.text);
-            }, (error) => {
+                toast.update(id, { render: "پیام شما ارسال شد", type: "success", isLoading: false, autoClose: 5000 });
+            })
+            .catch((error) => {
                 console.log(error.text);
+                toast.update(id, { render: "خطا در ارسال پیام", type: "error", isLoading: false, autoClose: 5000 });
             });
         formik.resetForm();
     };
 
-
     return (
         <>
+
+
+
+
             <Helmet>
                 <title>
                     {props.helmet}
@@ -175,7 +181,7 @@ const Contact = (props) => {
                                                 {formik.errors.recaptcha}
                                             </Typography>
                                         )}
-                                    
+
                                     <Button
                                         type="submit"
                                         color="success"
