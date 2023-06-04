@@ -8,14 +8,13 @@ const SidebarHeader = () => {
 
             <Themebutton></Themebutton>
             <Avatar
-                src={require("../../assets/ramin.jpg")}
+                // src={require("../../assets/ramin.jpg")}
                 sx={{
                     height: 200, width: 200, position: "relative", margin: "auto",
                     display: { xs: "none", sm: "none", md: "block", lg: "block", xl: "block" }
                 }}
             ></Avatar>
-            <Typography variant="h6" color="text.primary"  >
-            </Typography>
+
             <Typography variant="caption" color="text.primary" className="">
                 توسعه دهنده فرانت اند
             </Typography>

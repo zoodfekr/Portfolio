@@ -156,7 +156,7 @@ const Contact = (props) => {
                                     </Grid>
                                 </CardContent>
 
-                                <CardActions sx={{ alignItems: "end", flexDirection: "column" }} >
+                                <CardActions sx={{ alignItems: "start", flexDirection: "column", px: 2.8 }} >
 
                                     <ReCAPTCHA
                                         ref={captcha}
