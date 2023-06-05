@@ -49,18 +49,6 @@ const Certificates = (props) => {
 
 
 
-                    {slider_image.map((value, index) => (
-                        <Slide in={checked} direction="up" style={{ transitionDelay: checked ? `${(index * 250)}ms` : "0ms" }} >
-                            <Grid key={index} item xs={12} sm={6} md={6} lg={4} xl={4} sx={{ my: 2, display: "flex", justifyContent: "center" }}>
-                                <Box component="div" sx={{ p: 1 }}>
-                                    <Box component="img" sx={{ height: "auto", maxWidth: "400px", width: 1 }} src={value.img} className="scale" />
-                                </Box>
-                            </Grid>
-                        </Slide>
-                    ))}
-
-
-
                 </Grid>
 
 

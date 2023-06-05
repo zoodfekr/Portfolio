@@ -9,7 +9,7 @@ const Socialmedia = () => {
     const socialmedia_data = [
         { aria_label: "Github", href: "https://github.com/zoodfekr", text: "Githab", icon: <GoMarkGithub style={{ fontSiz: "20px !important" }}></GoMarkGithub> },
         { aria_label: "skype", href: "https://join.skype.com/invite/MdJneJzpoQ6i", text: "skype", icon: <AiFillSkype style={{ fontSiz: "20px !important" }}></AiFillSkype> },
-        { aria_label: "skype", href: "https://join.skype.com/invite/MdJneJzpoQ6i", text: "skype", icon: <BsLinkedin style={{ fontSiz: "20px !important" }}></BsLinkedin> },
+        { aria_label: "linkedin", href: "https://www.linkedin.com/in/ramin-zoodfekr-08b16b233/", text: "skype", icon: <BsLinkedin style={{ fontSiz: "20px !important" }}></BsLinkedin> },
 
     ];
 

@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Unstable_Grid2";
 import { Avatar, Box, Card, Chip, Divider, Typography } from "@mui/material";
-import devinfo from '../../assets/devinfo.jpg';
+import devinfo from '../../assets/ramin.jpg';
 import Devinfo from './components/Devinfo';
 import CustomDivider from "../common/CustomDivider";
 import Skills from "./components/Skills";

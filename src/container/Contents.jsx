@@ -16,6 +16,8 @@ function Contents() {
 
   const { pagenumber, handleChange, theme } = useContext(Appcontext);
 
+
+
   return (
     <>
       <Grid
@@ -28,28 +30,29 @@ function Contents() {
       >
 
 
-
-          <TabPanel value={pagenumber} index={0}>
-            <Homepage></Homepage>
-          </TabPanel>
-
-          <TabPanel value={pagenumber} index={1}>
-            <Aboutpage></Aboutpage>
-          </TabPanel>
+        <TabPanel value={pagenumber} index={0}>
+          <Homepage></Homepage>
+        </TabPanel>
 
 
-          <TabPanel value={pagenumber} index={2}>
-            <Works helmet={"نمونه کارها"}></Works>
-          </TabPanel>
+        <TabPanel value={pagenumber} index={1}>
+          <Aboutpage></Aboutpage>
+        </TabPanel>
 
 
-          <TabPanel value={pagenumber} index={3}>
-            <Certificates helmet={"گواهینامه ها"}></Certificates>
-          </TabPanel>
+        <TabPanel value={pagenumber} index={2}>
+          <Works helmet={"نمونه کارها"}></Works>
+        </TabPanel>
 
-          <TabPanel value={pagenumber} index={4}>
-            <Contact helmet={"ارتباط با من"} ></Contact>
-          </TabPanel>
+
+        <TabPanel value={pagenumber} index={3}>
+          <Certificates helmet={"گواهینامه ها"}></Certificates>
+        </TabPanel>
+
+        <TabPanel value={pagenumber} index={4}>
+          <Contact helmet={"ارتباط با من"} ></Contact>
+        </TabPanel>
+
 
 
 
