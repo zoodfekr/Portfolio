@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import Appcontext from "../../context/Context";
 import { position } from "stylis";
-
+import Typed from 'react-typed';
 
 
 
@@ -26,8 +26,8 @@ const Homepage = () => {
             flexDirection: "column",
             filter: `${mode ? null : "grayscale(1)"}`,
             position: "relative",
-            overflowY:'auto',
-            overflowX:"hidden"
+            overflowY: 'auto',
+            overflowX: "hidden"
         }}>
             <Helmet>
                 <title> صفحه اصلی </title>
@@ -37,7 +37,7 @@ const Homepage = () => {
                 <Grid item xs={12} sm={12} md={8} lg={6} sx={{ px: 3, pt: 19 }}>
 
                     <Box sx={{
-                        m: "auto", display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", borderRadius: "25px", p: 3,mb:5,
+                        m: "auto", display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", borderRadius: "25px", p: 3, mb: 5,
                         backdropFilter: "blur(20px)", // این خط را اضافه کنید
 
                     }}>
@@ -54,32 +54,20 @@ const Homepage = () => {
                 </Typed> */}
                             رامین زودفکر
                         </Typography>
-                        <Typography variant='h4' color={"text.primary"}>
-                            {/* <Typed
-                    strings={['توسعه دهنده فرانت اند', 'Front-End Developer']}
-                    typeSpeed={100}
-                    backSpeed={50}
-                    startDelay={1000}
-                    loop
-                >
-                    <input type="text" className='glass' />
-                </Typed> */}
-                            توسعه دهنده فرانت اند
+                        <Typography variant='h4' color={"red"}>
+                            <Typed
+                                strings={['توسعه دهنده فرانت اند', 'Front-End Developer']}
+                                typeSpeed={100}
+                                backSpeed={50}
+                                startDelay={1000}
+                                loop
+                            >
+                                <input type="text" className='glass' />
+                            </Typed>
                         </Typography>
 
                         <Typography variant='h5' color={"text.primary"} align="justify" >
-                            {/* <Typed
-                    strings={['توسعه دهنده فرانت اند', 'Front-End Developer']}
-                    typeSpeed={100}
-                    backSpeed={50}
-                    startDelay={1000}
-                    loop
-                >
-                    <input type="text" className='glass' />
-                </Typed> */}
-                            به دلیل علاقه زیادی که به برنامه نویسی داشتم دوره های مربوط به فرانت اند
-                            رو به صورت آنلاین طی کردم و نسبتا به سطح قابل قبولی رسیدم و
-                            الان دنبال یک شرکت هستم تا به عنوان کارآموز مشفول به کار بشم و در آینده به موفقیت برسم
+                        به دلیل علاقه زیادی که به برنامه نویسی داشتم دوره های مربوط به فرانت اند رو به صورت آلاین طی کردم و نسبتا به سطح قابل قبولی رسیدم و الان دنبال یک شرکت هستم تا به عنوان کارآموز مشغول به کار بشم ودر آینده به موفقیت برسم.
                         </Typography>
                     </Box>
 

@@ -45,11 +45,11 @@ function Contents() {
         </TabPanel>
 
 
-        <TabPanel value={pagenumber} index={3}>
+        {/* <TabPanel value={pagenumber} index={3}>
           <Certificates helmet={"گواهینامه ها"}></Certificates>
-        </TabPanel>
+        </TabPanel> */}
 
-        <TabPanel value={pagenumber} index={4}>
+        <TabPanel value={pagenumber} index={3}>
           <Contact helmet={"ارتباط با من"} ></Contact>
         </TabPanel>
 
