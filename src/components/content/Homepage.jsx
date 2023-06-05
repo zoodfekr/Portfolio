@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import Appcontext from "../../context/Context";
 import { position } from "stylis";
-import Typed from 'react-typed';
+
 
 
 
@@ -42,28 +42,10 @@ const Homepage = () => {
 
                     }}>
                         <Typography variant="h2" color={"text.primary"}>
-                            {/* <Typed
-                    strings={['رامین زودفکر', 'Ramin zoodfekr']}
-                    typeSpeed={100}
-                    backSpeed={50}
-                    startDelay={1000}
-                // attr="placeholder"
-                // loop
-                >
-                    <input type="text" className='glass' />
-                </Typed> */}
                             رامین زودفکر
                         </Typography>
                         <Typography variant='h4' color={"red"}>
-                            <Typed
-                                strings={['توسعه دهنده فرانت اند', 'Front-End Developer']}
-                                typeSpeed={100}
-                                backSpeed={50}
-                                startDelay={1000}
-                                loop
-                            >
-                                <input type="text" className='glass' />
-                            </Typed>
+                            توسعه دهنده فرانت اند
                         </Typography>
 
                         <Typography variant='h5' color={"text.primary"} align="justify" >
