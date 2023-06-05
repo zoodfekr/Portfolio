@@ -8,7 +8,7 @@ const SidebarHeader = () => {
 
             <Themebutton></Themebutton>
             <Avatar
-                // src={require("../../assets/ramin.jpg")}
+                src={require("../../assets/ramin2.jpeg")}
                 sx={{
                     height: 200, width: 200, position: "relative", margin: "auto",
                     display: { xs: "none", sm: "none", md: "block", lg: "block", xl: "block" }
