@@ -29,7 +29,7 @@ function CircularProgressWithLabel(props) {
     return (
         <Box sx={{display:"flex", justifyContent:"center",flexDirection:"column",alignItems:"center"}}>
             <Box sx={{ position: 'relative', display: 'inline-flex', m: 2 }}>
-                <CircularProgress size={130} variant="determinate" {...props} disableShrink={false} sx={{ color: `${props.bgcolor}`, backgroundColor: `${mode ? "whitesmoke" : "grey"}` }} />
+                <CircularProgress size={100} variant="determinate" {...props} disableShrink={false} sx={{ color: `${props.bgcolor}`, backgroundColor: `${mode ? "whitesmoke" : "grey"}` }} />
                 <Box
                     sx={{
                         top: 0,
@@ -46,7 +46,7 @@ function CircularProgressWithLabel(props) {
                     <Typography variant="caption" component="div" color="text.primary" sx={{ fontSize: "larger" }}>
                         {`${Math.round(props.value)}%`}
                     </Typography>
-                    {props.data ? <Box component="img" src={props.data} sx={{ height: 50 }}></Box> : null}
+                    {props.data ? <Box component="img" src={props.data} sx={{ height: 35 }}></Box> : null}
 
                 </Box>
 

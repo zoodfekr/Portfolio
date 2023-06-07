@@ -15,7 +15,7 @@ const SidebarHeader = () => {
                 }}
             ></Avatar>
 
-            <Typography variant="caption" color="text.primary" className="">
+            <Typography variant="h4" color="text.primary" className="" sx={{lineHeight: 2.3}} fontFamily={"Shekasteh"}  >
                 توسعه دهنده فرانت اند
             </Typography>
         </>

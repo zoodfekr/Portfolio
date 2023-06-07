@@ -31,7 +31,7 @@ const SeftTimeline = () => {
                         </TimelineSeparator>
                         <TimelineContent>
 
-                            <Typography variant="body2" color="white">
+                        <Typography variant="body2" color="white">
                                 {item.text}
                             </Typography>
                         </TimelineContent>

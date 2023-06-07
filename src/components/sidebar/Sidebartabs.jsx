@@ -66,7 +66,8 @@ function Sidebartabs() {
                 my: 0.25,
                 mx: 0,
                 minHeight: 0,
-                px:0
+                px:0,
+                fontFamily:"vazir"
 
               },
               "&.Mui-selected": {

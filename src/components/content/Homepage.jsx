@@ -38,17 +38,16 @@ const Homepage = () => {
 
                     <Box sx={{
                         m: "auto", display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", borderRadius: "25px", p: 3, mb: 5,
-                        backdropFilter: "blur(20px)", // این خط را اضافه کنید
+                        backdropFilter: "blur(40px)", // این خط را اضافه کنید
+                        filter: "drop-shadow(2px 4px 6px black)",
 
                     }}>
-                        <Typography variant="h2" color={"text.primary"}>
+                        <Typography variant="h3" color={"text.primary"} fontFamily={"vazir"} sx={{lineHeight: 2.3}}>
                             رامین زودفکر
                         </Typography>
-                        <Typography variant='h4' color={"red"}>
-                            توسعه دهنده فرانت اند
-                        </Typography>
 
-                        <Typography variant='h5' color={"text.primary"} align="justify" >
+
+                        <Typography variant='h5' color={"text.primary"} align="justify" fontFamily={"vazir"} sx={{lineHeight: 1.8}}>
                       به دلیل علاقه زیادی که به برنامه نویسی داشتم دوره های مربوط به فرانت اند رو به صورت آنلاین طی کردم و نسبتا به سطح قابل قبولی رسیدم و الان دنبال یک شرکت هستم تا به عنوان کارآموز مشغول به کار بشم .
                         </Typography>
                     </Box>

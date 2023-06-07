@@ -9,6 +9,7 @@ import { useFormik } from 'formik';
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
+import { BsDisplay } from "react-icons/bs";
 
 
 const Contact = (props) => {
@@ -89,23 +90,6 @@ const Contact = (props) => {
                                     <Grid container sx={{}}>
                                         <Grid xs={12} sm={12} md={6} sx={{ mt: 2, px: 1 }}>
                                             <TextField
-                                                id="lastname"
-                                                name="lastname"
-                                                label="نشان"
-                                                value={formik.values.lastname}
-                                                onChange={formik.handleChange}
-                                                error={formik.touched.lastname && Boolean(formik.errors.lastname)}
-                                                helperText={formik.touched.lastname && formik.errors.lastname}
-                                                dir="rtl"
-                                                fullWidth
-                                                size="small"
-                                                color="danger"
-                                                variant="outlined"
-                                            />
-                                        </Grid>
-
-                                        <Grid xs={12} sm={12} md={6} sx={{ mt: 2, px: 1 }}>
-                                            <TextField
                                                 id="firstname"
                                                 name="firstname"
                                                 label="نام"
@@ -118,7 +102,27 @@ const Contact = (props) => {
                                                 size="small"
                                                 color="danger"
                                                 variant="outlined"
-                                            />                                        </Grid>
+                                            />
+
+
+                                        </Grid>
+
+                                        <Grid xs={12} sm={12} md={6} sx={{ mt: 2, px: 1 }}>
+                                            <TextField
+                                                id="lastname"
+                                                name="lastname"
+                                                label="نام خانوادگی"
+                                                value={formik.values.lastname}
+                                                onChange={formik.handleChange}
+                                                error={formik.touched.lastname && Boolean(formik.errors.lastname)}
+                                                helperText={formik.touched.lastname && formik.errors.lastname}
+                                                dir="rtl"
+                                                fullWidth
+                                                size="small"
+                                                color="danger"
+                                                variant="outlined"
+                                            />
+                                        </Grid>
 
                                         <Grid xs={12} sm={12} md={12} sx={{ mt: 2, px: 1 }}>
                                             <TextField
@@ -158,10 +162,11 @@ const Contact = (props) => {
 
                                 <CardActions sx={{ alignItems: "start", flexDirection: "column", px: 2.8 }} >
 
+
+
                                     <ReCAPTCHA
                                         ref={captcha}
-                                        sitekey="6Ldga0EmAAAAABR7Hre7Wp5TkKNmbJOyv33N5Elt
-                                        "
+                                        sitekey="6Ldga0EmAAAAABR7Hre7Wp5TkKNmbJOyv33N5Elt"
                                         theme={mode ? "light" : "dark"}
                                         hl="fa"
                                         onChange={(value) => {
@@ -169,7 +174,10 @@ const Contact = (props) => {
                                                 "recaptcha",
                                                 value
                                             );
-                                        }} />
+                                        }}
+                                        data-size="compact" />
+
+
 
 
                                     {formik.errors.recaptcha &&

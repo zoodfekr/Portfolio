@@ -48,7 +48,7 @@ function App() {
 
                         <Grid container sx={{ height: "100vh" }} >
                             <ToastContainer
-                                position="bottom-right"
+                                position="top-right"
                                 autoClose={2000}
                                 hideProgressBar={false}
                                 newestOnTop={false}

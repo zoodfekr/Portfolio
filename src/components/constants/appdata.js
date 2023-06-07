@@ -18,7 +18,7 @@ import bootstrap from '../../assets/cert/bootstrap.jpg';
 export const card_data = [
     {
         title: "رستوران تهران",
-        text: "این پروه با استفاده از HTML،CSS،BOOTSTRAP طراحی شده و یک سایت تک صفحه ای می باشد",
+        text: "این پروژه با استفاده از HTML،CSS،BOOTSTRAP طراحی شده و یک سایت تک صفحه ای می باشد",
         img: `${restaurant}`,
         color: "#DE901F",
         address: "https://zoodfekr.github.io/restaurant/",
@@ -33,7 +33,7 @@ export const card_data = [
         code: "https://github.com/zoodfekr/contacts-management",
     }, {
         title: " دفترچه لغت",
-        text: "این پروه با استفاده از کتابخانه React برای تمرین لغات انگلیسی ساخته شده در واقع این پروژه یک دفترچه لغت هوشمند به حسابت می آید.",
+        text: "این پروژه با استفاده از کتابخانه React برای تمرین لغات انگلیسی ساخته شده در واقع این پروژه یک دفترچه لغت هوشمند به حسابت می آید.",
         img: `${words}`,
         color: "#1976D2",
         address: "https://vocabulary-training-localstorage.github.io/",
